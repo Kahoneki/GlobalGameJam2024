@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Sky
+  - Background
+  - Road
+  - Foreground
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 410662253
+    locked: 0
+  - name: Road
+    uniqueID: 4112934951
+    locked: 0
+  - name: Background
+    uniqueID: 2686264191
+    locked: 0
+  - name: Sky
+    uniqueID: 2121509369
     locked: 0
