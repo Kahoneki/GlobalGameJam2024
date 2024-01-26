@@ -69,8 +69,18 @@ public class PlayerMovement : MonoBehaviour
 
         Quaternion target = Quaternion.Euler(0, 0, tiltAroundZ);
 
- 
+       if(car.transform.position.y !=3 || car.transform.position.y != -3) 
+        {
         transform.rotation = Quaternion.Slerp(transform.rotation , target , Time.deltaTime *smooth);
+        }
+        else if(car.transform.position.y == 3 || car.transform.position.y == -3) 
+        {
+
+            transform.rotation = Quaternion.identity;
+
+        }
+        
+
     }
 
 
