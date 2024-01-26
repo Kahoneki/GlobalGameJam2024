@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour
 
     public float speedMultiplier = 1;
     public float levelCompletionPercentage = 0;
+    public float roadSize = 3f;
     //public Player player; // edit once player script exists
 
     public int livesLeft;
@@ -31,5 +32,11 @@ public class LevelController : MonoBehaviour
     {
         speedMultiplier += Time.deltaTime; // change this formula for speeding up over time
         // probs do something with completion percentage
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(40, 2 * roadSize, 1));
     }
 }
