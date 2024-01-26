@@ -12,8 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
     private Vector2 moveDirection;
-    public float maxHeight;
-    public float minHeight;
+    
     float smooth = 10.0f;
     float tiltAngle = 15.0f;
 
@@ -61,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         car.velocity = new Vector2(0f,moveDirection.y * speed);
-        car.transform.position = Vector2.ClampMagnitude(car.transform.position, 3);
+        car.transform.position = Vector2.ClampMagnitude(car.transform.position, LevelController.Instance.roadSize);
     }
 
     void slerp() 
