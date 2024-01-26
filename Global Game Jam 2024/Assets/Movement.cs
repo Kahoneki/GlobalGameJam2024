@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float moveForce = 10f;
+    [SerializeField] float moveSpeed = 100f;
 
     [SerializeField] Rigidbody2D rb;
+
+    [SerializeField] Transform oTransform;
+
+    [SerializeField] float moveSpeedMultiplier = 1;
 
     float LevelProgression = 1;
 
@@ -19,6 +23,12 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(Vector3.left * moveForce * LevelProgression);
+        rb.velocityX = -moveSpeed * LevelController.Instance.speedMultiplier * moveSpeedMultiplier * Time.deltaTime;
+
+        if (oTransform.position.x < -10)
+        {
+            Debug.Log("Destroying Object");
+            Destroy(gameObject);
+        }
     }
 }
