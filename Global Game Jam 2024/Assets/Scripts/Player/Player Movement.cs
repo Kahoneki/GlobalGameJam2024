@@ -65,21 +65,19 @@ public class PlayerMovement : MonoBehaviour
 
     void slerp() 
     {
+        
         float tiltAroundZ = Input.GetAxis("Vertical") *tiltAngle;
-
         Quaternion target = Quaternion.Euler(0, 0, tiltAroundZ);
+        if(car.transform.position.y == LevelController.Instance.roadSize || car.transform.position.y == -LevelController.Instance.roadSize) {
 
-       if(car.transform.position.y !=3 || car.transform.position.y != -3) 
-        {
-        transform.rotation = Quaternion.Slerp(transform.rotation , target , Time.deltaTime *smooth);
+            Quaternion target2 = Quaternion.identity;
+            transform.rotation = Quaternion.Slerp(target2, transform.rotation, Time.deltaTime * smooth);
         }
-        else if(car.transform.position.y == 3 || car.transform.position.y == -3) 
-        {
-
-            transform.rotation = Quaternion.identity;
-
+        else  {
+          transform.rotation = Quaternion.Slerp(transform.rotation , target , Time.deltaTime *smooth); 
         }
         
+
 
     }
 
