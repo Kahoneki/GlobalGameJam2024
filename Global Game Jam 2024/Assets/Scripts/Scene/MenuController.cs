@@ -10,7 +10,7 @@ public class MenuController : MonoBehaviour
 
     public void begin()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Scene01");
     }
 
 
@@ -38,6 +38,11 @@ public class MenuController : MonoBehaviour
     {
        PauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Scene02");
     }
 
 
