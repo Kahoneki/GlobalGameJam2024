@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     //script for player movement
-   public Rigidbody2D car;
+    private Rigidbody2D car;
     
     public float speed;
     private Vector2 moveDirection;
