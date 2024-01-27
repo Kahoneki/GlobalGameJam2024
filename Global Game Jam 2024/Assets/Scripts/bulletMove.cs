@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class bulletMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float moveSpeed = 100f;
+
+    [SerializeField] Rigidbody2D rb;
+
+    [SerializeField] Transform oTransform;
+
+    [SerializeField] float moveSpeedMultiplier = 1;
 
     // Update is called once per frame
     void Update()
     {
-        
+        rb.velocityX = moveSpeed * LevelController.Instance.speedMultiplier * moveSpeedMultiplier * Time.deltaTime;
+
+        if (oTransform.position.x > 18)
+        {
+            Debug.Log("Destroying Object");
+            Destroy(gameObject);
+        }
     }
 }
