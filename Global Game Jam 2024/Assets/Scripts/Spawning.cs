@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Spawning : MonoBehaviour
 {
-    float LevelProgression = 1;
     [SerializeField] float initialSpawnDelay = 1000;
     [SerializeField] float spawnDelayLimit = 1;
     float spawnTimer;
