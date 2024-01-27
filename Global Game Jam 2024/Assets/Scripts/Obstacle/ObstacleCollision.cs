@@ -9,6 +9,13 @@ public class ObstacleCollision : MonoBehaviour
     public UnityEvent OnHit;
     void OnTriggerEnter2D(Collider2D col)
     {
-        OnHit.Invoke();
+        if (col.CompareTag("Obstacle"))
+        {
+            if (!LevelController.Instance.Ethereal) { OnHit.Invoke(); }
+        }
+        else if (col.CompareTag("PowerUp"))
+        {
+            Destroy(col);
+        }
     }
 }

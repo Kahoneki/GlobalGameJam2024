@@ -246,8 +246,6 @@ MonoBehaviour:
   spawnDelayLimit: 1
   obstacle: {fileID: 6647506956798089364, guid: 52c953b63c682244e91e6b25b71367df, type: 3}
   SpawnSpeedModifier: 0.1
-  roadCentreY: 0
-  halfRoadWidth: 4.5
 --- !u!114 &528556829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 1
   levelCompletionPercentage: 0
+  roadSize: 4.5
   livesLeft: 0
 --- !u!4 &528556830
 Transform:
