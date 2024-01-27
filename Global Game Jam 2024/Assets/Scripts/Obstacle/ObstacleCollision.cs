@@ -12,6 +12,7 @@ public class ObstacleCollision : MonoBehaviour
         if (col.CompareTag("Obstacle"))
         {
             if (!LevelController.Instance.Ethereal) { OnHit.Invoke(); }
+            Destroy(col);
         }
         else if (col.CompareTag("PowerUp"))
         {
