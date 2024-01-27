@@ -19,11 +19,10 @@ public class Parallax : MonoBehaviour
         //Road - 8
         //Foreground - 9
         parallaxSpeed = (((float)gameObject.layer - 5)/4)+0.25f; //Range transformation [6,9] -> [0.5,1.25] (This transformation ensures that the road layer has a parallax speed of 1)
-        moveSpeed = 100f;
+        moveSpeed = 50f;
         spriteLength = GetComponent<SpriteRenderer>().bounds.size.x;
-
+        
         horizontalCameraHalfSize = Camera.main.orthographicSize * (16f/9f);
-
     }
 
     void Update() {
@@ -32,6 +31,7 @@ public class Parallax : MonoBehaviour
         Vector3 deltaPos = new Vector3(parallaxSpeed * moveSpeed * Time.deltaTime, 0, 0);
         transform.position -= deltaPos;
         if (transform.position.x <= -(horizontalCameraHalfSize + spriteLength/2)) { //Out of bounds
+            if (gameObject.layer == LayerMask.NameToLayer("Road")) { Debug.Log(transform.position.x); Debug.Log(-(horizontalCameraHalfSize + spriteLength / 2)); Debug.Log(spriteLength);  Debug.Log('\n'); }
             ParallaxFactory.Instance.SpawnNewLayer(gameObject.layer, parallaxSpeed * moveSpeed); //Offset is between actual position and expected position at time of destruction
             Destroy(gameObject);
         }
