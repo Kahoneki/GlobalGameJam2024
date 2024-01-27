@@ -8,7 +8,7 @@ public class LevelController : MonoBehaviour
     public static LevelController Instance { get; private set; }
 
     public float baseSpeedMultiplier = 1;
-    public float speedMultiplier; 
+    public float speedMultiplier;
     public float levelCompletionPercentage = 0;
     public float roadSize = 4.5f;
     public bool Ethereal = false;
@@ -53,7 +53,7 @@ public class LevelController : MonoBehaviour
         //Changes speed over time
         baseSpeedMultiplier += Time.deltaTime; // change this formula for speeding up over time
         //changes game speed depending on slowTime power up.
-        if(slowTime) { speedMultiplier = baseSpeedMultiplier / 2; } else { speedMultiplier = baseSpeedMultiplier; }
+        if (slowTime) { speedMultiplier = baseSpeedMultiplier / 2; } else { speedMultiplier = baseSpeedMultiplier; }
         // probs do something with completion percentage
         if (livesLeft <= 0)
         {
@@ -68,7 +68,7 @@ public class LevelController : MonoBehaviour
         //Timer to reset slowTime
         if (slowTimeTimer > 0) { slowTimeTimer--; }
         else if ((slowTimeTimer <= 0) && (slowTime)) { slowTime = false; }
-        
+
     }
 
     //Debug to show road
@@ -88,7 +88,7 @@ public class LevelController : MonoBehaviour
     //Function to increase lives when power up collected
     public void IncrementLives()
     {
-        if(livesLeft < maxLives)
+        if (livesLeft < maxLives)
         {
             livesLeft++;
         }
@@ -99,5 +99,17 @@ public class LevelController : MonoBehaviour
     {
         slowTime = true;
         slowTimeTimer = slowTimeTime;
+    }
+
+    //Function to lose two health values
+    public void Knifed()
+    {
+        livesLeft -=2;
+        if(livesLeft< 0) {livesLeft = 0;}
+    }
+    //Function to lose a health value
+    public void Hit()
+    {
+        livesLeft -= 2;
     }
 }
