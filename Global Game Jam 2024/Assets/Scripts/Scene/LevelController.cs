@@ -36,7 +36,6 @@ public class LevelController : MonoBehaviour
         {
             Application.Quit();
         }
-        Debug.Log("Lives left: " + livesLeft);
     }
 
     private void OnDrawGizmosSelected()
