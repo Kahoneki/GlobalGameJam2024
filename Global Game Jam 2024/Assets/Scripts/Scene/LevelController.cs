@@ -59,8 +59,6 @@ public class LevelController : MonoBehaviour
         {
             Application.Quit();
         }
-        //Debugs Avaliable Lives
-        Debug.Log("Lives left: " + livesLeft);
 
         //Timer to reset invincibility
         if (EtherealTimer > 0) { EtherealTimer--; }
