@@ -12,7 +12,7 @@ public class Player2Controls : SpawningBase
     [SerializeField] int[] inventory = new int[5] { 999, 1, 25, 20, 15 };
 
     int counter = 0;
-    int current = -1;
+    
     //object counts , skittles = infinite
     //                bannas = 1
     //                mines = 25
@@ -63,7 +63,7 @@ public class Player2Controls : SpawningBase
             }
         }
 
-        current = inventory[counter]; // passing in the same index variable to select the affecting value, which then will be decreased everytime the relative object is spawned
+       // passing in the same index variable to select the affecting value, which then will be decreased everytime the relative object is spawned
         if (inventory[counter] == 0)
         {
             counter++;
