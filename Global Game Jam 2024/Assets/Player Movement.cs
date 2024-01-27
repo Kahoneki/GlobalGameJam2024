@@ -7,13 +7,13 @@ public class PlayerMovement : MonoBehaviour
 
 
     //script for player movement
-   public Rigidbody2D car;
+    Rigidbody2D car;
     
     public float speed;
     private Vector2 moveDirection;
     
-    float smooth = 10.0f;
-    float tiltAngle = 15.0f;
+    public float smooth = 10.0f;
+    public float tiltAngle = 15.0f;
 
     
  
