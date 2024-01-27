@@ -37,8 +37,7 @@ public class Player2Controls : SpawningBase
         if (Input.GetMouseButtonDown(0) && spawnTimer <= 0)
         {
             SpawnObject(obstacle, pos.y);
-            
-            current--;
+            inventory[counter]--;
             //subtract value from the count of the spawned object
 
         }
