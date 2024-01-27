@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    [SerializeField] GameObject obstacle;
 
     //script for player movement
-   public Rigidbody2D car;
+    public Rigidbody2D car;
     
     public float speed;
     public float maxSpeed;
