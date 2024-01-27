@@ -405,9 +405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65bdf69d8fefb34cafac13be1ead7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
   speed: 10
-  maxSpeed: 1
+  smooth: 5
+  tiltAngle: 15
 --- !u!50 &1467740482
 Rigidbody2D:
   serializedVersion: 4
