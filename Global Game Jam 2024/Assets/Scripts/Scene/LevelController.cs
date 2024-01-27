@@ -23,12 +23,18 @@ public class LevelController : MonoBehaviour
     public int maxLives = 10;
     public int livesLeft;
 
+    private void OnValidate()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
     //setup on creation
     private void Awake()
     {
         livesLeft = maxLives;
         speedMultiplier = baseSpeedMultiplier;
-        if (Instance != null)
+        if (Instance != null && Instance != this)
             Destroy(gameObject);
         else
             Instance = this;
