@@ -5,9 +5,9 @@ using UnityEngine;
 public class SpawningAlternative : SpawningBase
 {
     [SerializeField] GameObject[] obstacles;
-    [SerializeField] int[] obstacleSpawnChances;
+    [SerializeField] float[] obstacleSpawnChances;
     [SerializeField] GameObject[] powerups;
-    [SerializeField] int[] powerupSpawnChances;
+    [SerializeField] float[] powerupSpawnChances;
 
     protected override void Update()
     {
@@ -15,7 +15,7 @@ public class SpawningAlternative : SpawningBase
         if (spawnTimer <= 0)
         {
             GameObject objToSpawn;
-            int ran = Random.Range(0, 100);
+            float ran = Random.Range(0.0f, 100.0f);
             if (Random.Range(0, 100) < 5) // powerup
             {
                 objToSpawn = powerups[^1];
@@ -34,7 +34,7 @@ public class SpawningAlternative : SpawningBase
                 objToSpawn = obstacles[^1];
                 for (int i = 0; i < obstacles.Length - 1; i++)
                 {
-                    if (ran < obstacleSpawnChances[i])
+                    if (ran <= obstacleSpawnChances[i])
                     {
                         objToSpawn = obstacles[i];
                         break;
