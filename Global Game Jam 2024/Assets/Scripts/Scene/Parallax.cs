@@ -23,8 +23,6 @@ public class Parallax : MonoBehaviour
         spriteLength = GetComponent<SpriteRenderer>().bounds.size.x;
 
         horizontalCameraHalfSize = Camera.main.orthographicSize * (16f/9f);
-        Debug.Log((float)Screen.width/Screen.height);
-
     }
 
     void Update() {
