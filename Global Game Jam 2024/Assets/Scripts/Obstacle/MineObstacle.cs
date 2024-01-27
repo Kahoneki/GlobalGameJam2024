@@ -7,6 +7,6 @@ public class MineObstacle : MonoBehaviour
     //Makes Honking Sound
     private void OnDestroy()
     {
-        
+        //Set to play sound
     }
 }

@@ -7,6 +7,6 @@ public class KnifeObstacle : MonoBehaviour
     //Does double damage
     private void OnDestroy()
     {
-
+        LevelController.Instance.Knifed();
     }
 }
