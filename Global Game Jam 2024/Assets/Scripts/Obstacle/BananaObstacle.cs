@@ -7,6 +7,6 @@ public class BananaObstacle : MonoBehaviour
     //Outright Kills Player
     private void OnDestroy()
     {
-
+        LevelController.Instance.Obliterate();
     }
 }

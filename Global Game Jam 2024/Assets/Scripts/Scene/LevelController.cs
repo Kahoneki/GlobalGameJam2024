@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -111,5 +112,10 @@ public class LevelController : MonoBehaviour
     public void Hit()
     {
         livesLeft -= 2;
+    }
+    //Sets lives to zero on banana hit
+    public void Obliterate()
+    {
+        livesLeft = 0;
     }
 }
