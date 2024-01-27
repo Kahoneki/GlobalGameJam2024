@@ -6,6 +6,8 @@ public class ObstacleMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 100f;
 
+    [SerializeField] float rotateSpeed = 0f;
+
     [SerializeField] Rigidbody2D rb;
 
     [SerializeField] Transform oTransform;
@@ -16,6 +18,8 @@ public class ObstacleMovement : MonoBehaviour
     void Update()
     {
         rb.velocityX = -moveSpeed * LevelController.Instance.speedMultiplier * moveSpeedMultiplier * Time.deltaTime;
+
+        rb.angularVelocity = rotateSpeed *Time.deltaTime;
 
         if (oTransform.position.x < -3)
         {
