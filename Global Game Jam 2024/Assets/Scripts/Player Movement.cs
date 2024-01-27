@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     void inputs() 
     {
         float y = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(0f, y);
+        moveDirection = new Vector2(0f, y); 
     }
 
     private void Move()

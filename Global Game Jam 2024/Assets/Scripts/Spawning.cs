@@ -25,7 +25,7 @@ public class Spawning : MonoBehaviour
     {
         spawnDelay = initialSpawnDelay - ((LevelController.Instance.speedMultiplier * SpawnSpeedModifier));
         if (spawnDelay < spawnDelayLimit) { spawnDelay = spawnDelayLimit; }
-        Debug.Log("Spawn Delay: " + spawnDelay);
+        //Debug.Log("Spawn Delay: " + spawnDelay);
         if (spawnTimer <= 0)
         {
             GameObject newObject = Instantiate(obstacle);

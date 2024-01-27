@@ -12,7 +12,7 @@ public class LevelController : MonoBehaviour
     public float roadSize = 3f;
     //public Player player; // edit once player script exists
 
-    public int livesLeft;
+    public int livesLeft = 10;
 
     private void Awake()
     {
@@ -32,6 +32,11 @@ public class LevelController : MonoBehaviour
     {
         speedMultiplier += Time.deltaTime; // change this formula for speeding up over time
         // probs do something with completion percentage
+        if(livesLeft <= 0)
+        {
+            Application.Quit();
+        }
+        Debug.Log("Lives left: " + livesLeft);
     }
 
     private void OnDrawGizmosSelected()
