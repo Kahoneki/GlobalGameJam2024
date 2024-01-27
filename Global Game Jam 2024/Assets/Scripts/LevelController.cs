@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
 
     public float speedMultiplier = 1;
     public float levelCompletionPercentage = 0;
-    public float roadSize = 3f;
+    public float roadSize = 4.5f;
     //public Player player; // edit once player script exists
 
     public int livesLeft = 10;
