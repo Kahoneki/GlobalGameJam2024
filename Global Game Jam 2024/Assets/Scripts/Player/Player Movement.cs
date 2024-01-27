@@ -18,17 +18,10 @@ public class PlayerMovement : MonoBehaviour
     float smooth = 10.0f;
     float tiltAngle = 15.0f;
 
-    //validate only one version of script running. 
-    private void OnValidate()
-    {
-        if (Instance == null)
-            Instance = this;
-    }
-
     //setup on creation
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance != null)
             Destroy(gameObject);
         else
             Instance = this;

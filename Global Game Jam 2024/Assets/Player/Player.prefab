@@ -175,9 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65bdf69d8fefb34cafac13be1ead7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 0}
-  speed: 10
-  maxSpeed: 1
+  baseSpeed: 10
+  PinSpeedModifier: 1.5
+  pinResetDelayTime: 300
 --- !u!114 &2411604056684377760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,3 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf0a1cdc3c660642929a471c3146bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noseAmmo: 0
+  delayTime: 500
+  clownNose: {fileID: 2010440221908156568, guid: 7ea5dec4f600e2a42bef6d4e1e1e60ff, type: 3}
