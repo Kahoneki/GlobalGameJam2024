@@ -11,8 +11,6 @@ public class Spawning : MonoBehaviour
     float spawnDelay;
     [SerializeField] GameObject obstacle;
     [SerializeField] float SpawnSpeedModifier = 0.1f;
-    [SerializeField] float roadCentreY = 0f;
-    [SerializeField] float halfRoadWidth = 4.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +23,13 @@ public class Spawning : MonoBehaviour
     {
         spawnDelay = initialSpawnDelay - ((LevelController.Instance.speedMultiplier * SpawnSpeedModifier));
         if (spawnDelay < spawnDelayLimit) { spawnDelay = spawnDelayLimit; }
-        Debug.Log("Spawn Delay: " + spawnDelay);
+        //Debug.Log("Spawn Delay: " + spawnDelay);
         if (spawnTimer <= 0)
         {
             GameObject newObject = Instantiate(obstacle);
             Vector2 Position = newObject.transform.position;
-            Position.x = 9f;
-            Position.y = Random.Range(roadCentreY + halfRoadWidth, roadCentreY-halfRoadWidth);
+            Position.x = 18f;
+            Position.y = Random.Range(LevelController.Instance.roadSize, -LevelController.Instance.roadSize);
             newObject.transform.position = Position;
             spawnTimer = spawnDelay;
             //Debug.Log("I have spawned an obstacle");
