@@ -30,8 +30,7 @@ public class Parallax : MonoBehaviour
 
         Vector3 deltaPos = new Vector3(parallaxSpeed * moveSpeed * Time.deltaTime, 0, 0);
         transform.position -= deltaPos;
-        if (transform.position.x <= -(horizontalCameraHalfSize + spriteLength/2)) { //Out of bounds
-            if (gameObject.layer == LayerMask.NameToLayer("Road")) { Debug.Log(transform.position.x); Debug.Log(-(horizontalCameraHalfSize + spriteLength / 2)); Debug.Log(spriteLength);  Debug.Log('\n'); }
+        if (transform.position.x <= 2 * -(horizontalCameraHalfSize + spriteLength/2)) { //Out of bounds
             ParallaxFactory.Instance.SpawnNewLayer(gameObject.layer, parallaxSpeed * moveSpeed); //Offset is between actual position and expected position at time of destruction
             Destroy(gameObject);
         }
