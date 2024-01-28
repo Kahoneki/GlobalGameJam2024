@@ -1,18 +1,17 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player2Controls : SpawningBase
 {
+    public UnityEvent<int, int> OnVisualsUpdate;
+    public GameObject[] selection;
     [SerializeField] GameObject obstacle;
-    [SerializeField] public GameObject[] selection;
     [SerializeField] int[] inventory = new int[5] { 999, 1, 25, 20, 15 };
 
     int counter = 0;
-    
+
     //object counts , skittles = infinite
     //                bannas = 1
     //                mines = 25
@@ -21,6 +20,11 @@ public class Player2Controls : SpawningBase
     //pass the selector into the array to slect the game object to spawn
     //make second array to keep iventory. pass in same counter as the selector so we know what value to effect
     //change value accordingly. when we run out, erase the respective element.
+
+    private void Start()
+    {
+        NextObstacle();
+    }
 
     protected override void Update()
     {
@@ -32,51 +36,41 @@ public class Player2Controls : SpawningBase
                             LevelController.Instance.roadSize);
         transform.position = pos;
 
-        selector();
-
-        if (Input.GetMouseButtonDown(0) && spawnTimer <= 0)
+        if (Input.GetMouseButtonDown(0) && spawnTimer <= 0 && obstacle != null)
         {
             SpawnObject(obstacle, pos.y);
             inventory[counter]--;
             //subtract value from the count of the spawned object
-
         }
+        
+        if (Input.GetMouseButtonDown(1) || inventory[counter] == 0)
+        {
+            NextObstacle();
+        }
+
         //selecting an object to spawn
         //need way of tracking the currently selected object
         //pass objects into array and index accordingly
         //use mouse butten right click to change the by 1 to select object
     }
-    void selector()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (counter == selection.Length-1)
-            {
-                counter = 0;
-                obstacle = selection[counter];
-                Debug.Log("Counter 0");
-            }
-            else
-            {
-                counter++;
-                Debug.Log(counter);
-            }
-        }
 
-       // passing in the same index variable to select the affecting value, which then will be decreased everytime the relative object is spawned
-        if (inventory[counter] == 0)
+    void NextObstacle()
+    {
+        for (int i = 0; i < selection.Length; i++)
         {
             counter++;
-            obstacle = selection[counter];// if the returned value from the inventory is 0 then we move to the next object
-            Debug.Log("works");
+            if (counter == selection.Length) { counter = 0; }
+
+            // passing in the same index variable to select the affecting value, which then will be decreased everytime the relative object is spawned
+            if (inventory[counter] > 0) // if the returned value from the inventory is 0 then we move to the next object
+            {
+                obstacle = selection[counter]; // in all other cases the obstacle will be set to the spawn function
+                OnVisualsUpdate.Invoke(counter, inventory[counter]);
+                return;
+            }
         }
-        else
-        {
-            obstacle = selection[counter]; // in all other cases the obstacle will be set to the spawn function
-        }
 
-
-
-
+        obstacle = null;
+        OnVisualsUpdate.Invoke(counter, inventory[counter]);
     }
 }
