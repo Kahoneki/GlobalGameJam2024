@@ -6,7 +6,7 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     private float parallaxSpeed; //Layer dependent - units per frame
-    private float moveSpeed = 100f;
+    private float moveSpeed = 10f;
     [HideInInspector] public static float spriteLength;
 
     private float horizontalCameraHalfSize;

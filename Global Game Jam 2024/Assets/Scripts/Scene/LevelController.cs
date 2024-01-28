@@ -13,7 +13,7 @@ public class LevelController : MonoBehaviour
     public UnityEvent onHit;
     public UnityEvent onLifeGained;
 
-    private float baseSpeedMultiplier = 1f;
+    [SerializeField] float baseSpeedMultiplier = 1f;
     public float speedMultiplier;
     public float levelCompletionPercentage = 0;
     [SerializeField] float levelTime = 120; // level lasts 120 seconds
@@ -26,7 +26,6 @@ public class LevelController : MonoBehaviour
     public int slowTimeTime = 0;
     public int noseAmmo = 0;
     [SerializeField] int stopDelayTime = 1000;
-    [SerializeField] float speedCatchupInterpolation = 0.01f;
     [SerializeField] float changeRate = 0.7f;
     [SerializeField] GameObject splatObj;
     [SerializeField] public Transform player;
