@@ -1777,7 +1777,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8083460395522925326, guid: b0aac60358e8e8d4cb683964b96a4a45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09214b04d68e6c04d8af605e2ae7d99d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1830,6 +1830,7 @@ MonoBehaviour:
   noseAmmo: 0
   stopDelayTime: 1000
   speedCatchupInterpolation: 0.01
+  changeRate: 0.7
   maxLives: 10
   livesLeft: 10
 --- !u!4 &2052705284

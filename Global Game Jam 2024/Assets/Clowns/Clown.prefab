@@ -131,4 +131,4 @@ MonoBehaviour:
   deathSprite: {fileID: 4039116729269871964, guid: 11aa2daf16c8bb04d9cef8c48d2f194e, type: 3}
   moveSpeed: 2
   rotateSpeed: 200
-  spinTimer: 800
+  spinTimer: 3

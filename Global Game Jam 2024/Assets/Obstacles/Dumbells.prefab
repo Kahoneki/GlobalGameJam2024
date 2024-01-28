@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6430817108565662352}
   - component: {fileID: 8642301998591142887}
   - component: {fileID: 6083783577509669865}
-  - component: {fileID: 4056092811947251025}
   m_Layer: 0
   m_Name: Dumbells
   m_TagString: Obstacle
@@ -178,15 +177,3 @@ MonoBehaviour:
   rb: {fileID: 6430817108565662352}
   oTransform: {fileID: 495175484883329033}
   moveSpeedMultiplier: 1
---- !u!114 &4056092811947251025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409160128096467868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fac115df9c208e418752835f7867f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

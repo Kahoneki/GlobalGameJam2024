@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1543688584328636924}
   - component: {fileID: 754651008382346369}
   - component: {fileID: 8312224820326631409}
-  - component: {fileID: 6774199710989081811}
   m_Layer: 0
   m_Name: Landmine
   m_TagString: Obstacle
@@ -178,15 +177,3 @@ MonoBehaviour:
   rb: {fileID: 1543688584328636924}
   oTransform: {fileID: 8109662937108078870}
   moveSpeedMultiplier: 1
---- !u!114 &6774199710989081811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2979122404374480524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f804745753a9a2f4a8a17280c499ada4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

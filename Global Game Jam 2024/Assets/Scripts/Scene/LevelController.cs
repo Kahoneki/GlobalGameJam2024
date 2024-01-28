@@ -1,4 +1,6 @@
+using DG.Tweening;
 using NUnit.Framework.Constraints;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -8,10 +10,13 @@ using UnityEngine.Events;
 public class LevelController : MonoBehaviour
 {
     public static LevelController Instance { get; private set; }
+    public UnityEvent onHit;
+    public UnityEvent onLifeGained;
 
     public float baseSpeedMultiplier = 1;
     public float speedMultiplier;
     public float levelCompletionPercentage = 0;
+    [SerializeField] float levelTime = 120; // level lasts 120 seconds
     public float roadSize = 2;
     public bool Ethereal = false;
     public bool slowTime = false;
@@ -26,7 +31,8 @@ public class LevelController : MonoBehaviour
     [SerializeField] int stopDelayTime = 1000;
     [SerializeField] float speedCatchupInterpolation = 0.01f;
     [SerializeField] float changeRate = 0.7f;
-    //public Player player; // edit once player script exists
+    [SerializeField] GameObject splatObj;
+    [SerializeField] Transform player;
 
     public int maxLives = 10;
     public int livesLeft;
@@ -58,10 +64,12 @@ public class LevelController : MonoBehaviour
     //Update Loop
     private void Update()
     {
+        levelCompletionPercentage += Time.deltaTime / levelTime;
+
         if(!dumbellHit)
         {
             //Changes speed over time
-            baseSpeedMultiplier += changeRate; // change this formula for speeding up over time
+            baseSpeedMultiplier += changeRate * Time.deltaTime; // change this formula for speeding up over time
         }
         //changes game speed depending on slowTime power up.
         if (slowTime) { speedMultiplier = baseSpeedMultiplier / 2; } else { speedMultiplier = baseSpeedMultiplier; }
@@ -88,7 +96,7 @@ public class LevelController : MonoBehaviour
             if(stopDelay <= 0)
             {
                 //increased speed exponentially till it reaches percentage of original speed.
-                speedMultiplier = speedMultiplier + Mathf.Lerp(speedMultiplier, savedIntMultiplier, speedCatchupInterpolation);
+                speedMultiplier += Mathf.Lerp(speedMultiplier, savedIntMultiplier, speedCatchupInterpolation);
                 if (speedMultiplier >= baseSpeedMultiplier * 0.9f)
                 {
                     //sets speed back to original
@@ -139,25 +147,48 @@ public class LevelController : MonoBehaviour
     //Function to lose two health values
     public void Knifed()
     {
-        livesLeft -=2;
-        if(livesLeft< 0) {livesLeft = 0;}
+        onHit.Invoke();
+        onHit.Invoke();
     }
+
     //Function to lose a health value
     public void Hit()
     {
         livesLeft -= 1;
     }
+
     //Sets lives to zero on banana hit
     public void Obliterate()
     {
-        livesLeft = 0;
+        for (int i = 0; i < livesLeft; i++)
+        {
+            onHit.Invoke();
+        }
     }
+
+    public void HitMine()
+    {
+        // play sound
+    }
+
     //Saves current game speed and sets original to zero. 
-    public void hitDumbell()
+    public void HitDumbell()
     {
         dumbellHit = true;
         savedIntMultiplier = speedMultiplier;
         speedMultiplier = 0;
         stopDelay = stopDelayTime;
+    }
+
+    public void Splat()
+    {
+        Instantiate(splatObj);
+    }
+
+    public void Spin()
+    {
+        player.GetComponent<PlayerMovement>().rotating = false;
+        player.DORotate(Vector3.forward * 360, .5f, RotateMode.FastBeyond360)
+            .OnComplete(() => { player.GetComponent<PlayerMovement>().rotating = true; });
     }
 }

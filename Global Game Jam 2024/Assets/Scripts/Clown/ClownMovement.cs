@@ -10,9 +10,9 @@ public class ClownMovement : MonoBehaviour
     [SerializeField] SpriteRenderer SR;
     public Sprite deathSprite;
     float rotation;
-    [SerializeField] int moveSpeed = 1000;
+    [SerializeField] float moveSpeed = 1000;
     [SerializeField] float rotateSpeed = 10000f;
-    [SerializeField] int spinTimer = 1000;
+    [SerializeField] float spinTimer = 1000;
     bool spinning = true;
 
     // Start is called before the first frame update
@@ -27,14 +27,14 @@ public class ClownMovement : MonoBehaviour
     {
         if(spinning)
         {
-            rb.velocityY = (float)moveSpeed * Mathf.Sin(rotation) * LevelController.Instance.speedMultiplier;
-            rb.velocityX = (float)moveSpeed * Mathf.Cos(rotation) * LevelController.Instance.speedMultiplier;
+            rb.velocityY = moveSpeed * Mathf.Sin(rotation) * LevelController.Instance.speedMultiplier;
+            rb.velocityX = moveSpeed * Mathf.Cos(rotation) * LevelController.Instance.speedMultiplier;
         }
         else
         {
             rb.velocityX = -10f * LevelController.Instance.speedMultiplier;
         }
-        if((spinTimer <= 0) || tf.position.y < -4)
+        if((spinTimer <= 0) || tf.position.y < -LevelController.Instance.roadSize)
         {
             rb.velocityY = 0;
             rb.angularVelocity = 0;
@@ -44,12 +44,12 @@ public class ClownMovement : MonoBehaviour
         }
         else
         {
-            spinTimer--;
+            spinTimer -= Time.deltaTime;
         }   
         
         
         
-        if (tf.position.x < -8)
+        if (tf.position.x < -16)
         {
             Debug.Log("Destroying Object");
             Destroy(gameObject);

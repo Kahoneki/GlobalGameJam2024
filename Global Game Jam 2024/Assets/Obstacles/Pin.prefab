@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2567584336652225651}
   - component: {fileID: 1638714029306836463}
   - component: {fileID: 1866702685359598504}
-  - component: {fileID: 5145923218665119720}
   m_Layer: 0
   m_Name: Pin
   m_TagString: Obstacle
@@ -178,15 +177,3 @@ MonoBehaviour:
   rb: {fileID: 2567584336652225651}
   oTransform: {fileID: 4929404619059814606}
   moveSpeedMultiplier: 1
---- !u!114 &5145923218665119720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803515633165341893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe45a53475f79149aae6c74e24478a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
