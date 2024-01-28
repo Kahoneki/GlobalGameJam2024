@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] float slowTimeMultiplier = 0.5f;
 
     public int maxLives = 10;
-    static public int livesLeft;
+    public static int livesLeft;
 
     //setup on creation
     private void Awake()
