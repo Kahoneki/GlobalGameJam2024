@@ -6,7 +6,7 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     private float parallaxSpeed; //Layer dependent - units per frame
-    private float moveSpeed;
+    private float moveSpeed = 10f;
     [HideInInspector] public static float spriteLength;
 
     private float horizontalCameraHalfSize;
@@ -19,7 +19,7 @@ public class Parallax : MonoBehaviour
         //Road - 8
         //Foreground - 9
         parallaxSpeed = (((float)gameObject.layer - 5)/4)+0.25f; //Range transformation [6,9] -> [0.5,1.25] (This transformation ensures that the road layer has a parallax speed of 1)
-        moveSpeed = 50f;
+        
         spriteLength = GetComponent<SpriteRenderer>().bounds.size.x;
         
         horizontalCameraHalfSize = Camera.main.orthographicSize * (16f/9f);

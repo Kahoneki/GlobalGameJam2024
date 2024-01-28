@@ -19,6 +19,7 @@ public class ClownMovement : MonoBehaviour
     void Start()
     {
         rotation = Random.Range(Mathf.PI*1.4f, Mathf.PI*1.1f);
+        rb.angularVelocity = rotateSpeed;
     }
 
     // Update is called once per frame
@@ -26,23 +27,29 @@ public class ClownMovement : MonoBehaviour
     {
         if(spinning)
         {
-            rb.velocityY = (float)moveSpeed * Mathf.Sin(rotation) * LevelController.Instance.speedMultiplier * Time.deltaTime;
-            rb.angularVelocity = rotateSpeed * Time.deltaTime;
-        }
-        if(spinTimer <= 0)
-        {
-            spinning = false;
+            rb.velocityY = (float)moveSpeed * Mathf.Sin(rotation) * LevelController.Instance.speedMultiplier;
+            rb.velocityX = (float)moveSpeed * Mathf.Cos(rotation) * LevelController.Instance.speedMultiplier;
         }
         else
         {
+            rb.velocityX = -10f * LevelController.Instance.speedMultiplier;
+        }
+        if((spinTimer <= 0) || tf.position.y < -4)
+        {
+            rb.velocityY = 0;
+            rb.angularVelocity = 0;
+            spinning = false;
             tf.rotation = Quaternion.Euler(0, 0, 0);
             SR.sprite = deathSprite;
-            spinTimer--;
         }
+        else
+        {
+            spinTimer--;
+        }   
         
-        rb.velocityX = (float) moveSpeed * Mathf.Cos(rotation) * LevelController.Instance.speedMultiplier * Time.deltaTime;
         
-        if ((tf.position.x < -2) || (tf.position.y < -6))
+        
+        if (tf.position.x < -8)
         {
             Debug.Log("Destroying Object");
             Destroy(gameObject);

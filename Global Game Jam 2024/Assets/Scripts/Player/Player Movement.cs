@@ -63,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         slerp();
-  
     }
 
     void inputs() 

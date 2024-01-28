@@ -17,11 +17,11 @@ public class ObstacleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocityX = -moveSpeed * LevelController.Instance.speedMultiplier * moveSpeedMultiplier * Time.deltaTime;
+        rb.velocityX = -moveSpeed * LevelController.Instance.speedMultiplier * moveSpeedMultiplier;
 
-        rb.angularVelocity = rotateSpeed *Time.deltaTime;
+        rb.angularVelocity = rotateSpeed;
 
-        if (oTransform.position.x < -3)
+        if (oTransform.position.x < -8)
         {
             Debug.Log("Destroying Object");
             Destroy(gameObject);
