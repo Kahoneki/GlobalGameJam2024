@@ -26,7 +26,8 @@ public class Score : MonoBehaviour
         
         if (LevelController.livesLeft >= 9)
         {
-            counterText.text = "A";
+            counterText.text = " Score " +
+                            " A ";
         }
        else  if (LevelController.livesLeft >= 7)
         {
