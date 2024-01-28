@@ -19,7 +19,7 @@ public class ObstacleCollision : MonoBehaviour
                     LevelController.Instance.Obliterate();
                     break;
                 case "Dumbells(Clone)":
-                    LevelController.Instance.HitDumbell();
+                    LevelController.Instance.Dumbelled();
                     break;
                 case "Knife(Clone)":
                     LevelController.Instance.Knifed();
