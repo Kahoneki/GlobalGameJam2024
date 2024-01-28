@@ -31,6 +31,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject splatObj;
     [SerializeField] public Transform player;
     [SerializeField] float slowTimeMultiplier = 0.5f;
+    [SerializeField] Material baseMat, etherialMat, slimeMat;
 
     public int maxLives = 10;
     public static int livesLeft;
@@ -73,7 +74,11 @@ public class LevelController : MonoBehaviour
 
         //Timer to reset invincibility
         if (EtherealTimer > 0) { EtherealTimer--; }
-        else if ((EtherealTimer <= 0) && (Ethereal)) { Ethereal = false; }
+        else if ((EtherealTimer <= 0) && (Ethereal)) 
+        { 
+            Ethereal = false;
+            GetComponent<SpriteRenderer>().material = baseMat;
+        }
         //Timer to reset slowTime
         if (slowTimeTimer > 0) { slowTimeTimer--; }
         else if ((slowTimeTimer <= 0) && (slowTime)) 
@@ -83,6 +88,7 @@ public class LevelController : MonoBehaviour
             {
                 speedMultiplier = baseSpeedMultiplier;
                 slowTime = false;
+                GetComponent<SpriteRenderer>().material = baseMat;
             }
         }
     }
@@ -98,6 +104,7 @@ public class LevelController : MonoBehaviour
     public void MakeEthereal()
     {
         Ethereal = true;
+        GetComponent<SpriteRenderer>().material = etherialMat;
         EtherealTimer = EtherealTime;
     }
 
@@ -113,6 +120,7 @@ public class LevelController : MonoBehaviour
     //Function to slowTime
     public void SlowTime()
     {
+        GetComponent<SpriteRenderer>().material = slimeMat;
         speedMultiplier = baseSpeedMultiplier * slowTimeMultiplier;
         slowTime = true;
         slowTimeTimer = slowTimeTime;

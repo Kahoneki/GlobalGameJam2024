@@ -62,9 +62,9 @@ MonoBehaviour:
   onLifeGained:
     m_PersistentCalls:
       m_Calls: []
-  baseSpeedMultiplier: 1
   speedMultiplier: 1
   levelCompletionPercentage: 0
+  levelTime: 120
   roadSize: 2
   Ethereal: 0
   slowTime: 0
@@ -77,5 +77,9 @@ MonoBehaviour:
   speedCatchupInterpolation: 0.01
   changeRate: 0
   splatObj: {fileID: 6290081804193465749, guid: 25b536b49cd8cf843963dbc09d12cfe6, type: 3}
+  player: {fileID: 0}
+  slowTimeMultiplier: 0.5
+  baseMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  etherialMat: {fileID: -876546973899608171, guid: f226c2f0af0884b45a58999879d0ed8f, type: 3}
+  slimeMat: {fileID: -876546973899608171, guid: ed4a3ffd7a24d7f4a9ce8195859e6f52, type: 3}
   maxLives: 10
-  livesLeft: 10
