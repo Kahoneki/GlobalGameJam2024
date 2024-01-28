@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UpdateText : MonoBehaviour
 {
-
+    Player2Controls player;
     public TextMeshProUGUI barbellText;
     public TextMeshProUGUI knifeText;
     public TextMeshProUGUI buttonText;
@@ -26,12 +26,46 @@ public class UpdateText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        knifeText.text = knifecounter.ToString();
-        barbellText.text = barbellcounter.ToString();
-        buttonText.text = buttoncounter.ToString();
-        pinText.text = pincounter.ToString();
-        banannaText.text = banannacounter.ToString();
+       
     }
 
     
+    public void invUpda(int type, int count)
+    {
+     
+        switch (type) 
+        {
+            case 0:
+
+                barbellText.text = count.ToString();
+                    break;
+            case 1:
+
+                banannaText.text = count.ToString();
+                break;
+
+            case 2:
+
+                knifeText.text = count.ToString();
+                break;
+
+
+            case 3:
+
+                buttonText.text = count.ToString();
+                break;
+
+            case 4:
+
+                pinText.text = count.ToString();
+                break;
+
+
+
+
+
+        }
+
+
+    }
 }

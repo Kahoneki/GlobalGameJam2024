@@ -23,8 +23,13 @@ public class Player2Controls : SpawningBase
 
     private void Start()
     {
-        NextObstacle();
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            NextObstacle();
+        }
     }
+
+   
 
     protected override void Update()
     {
@@ -40,6 +45,7 @@ public class Player2Controls : SpawningBase
         {
             SpawnObject(obstacle, pos.y);
             inventory[counter]--;
+            OnVisualsUpdate.Invoke(counter, inventory[counter]);
             //subtract value from the count of the spawned object
         }
         

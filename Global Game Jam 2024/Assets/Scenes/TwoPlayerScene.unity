@@ -640,7 +640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -177.5}
+  m_AnchoredPosition: {x: 8, y: -178.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499495823
@@ -1276,11 +1276,11 @@ MonoBehaviour:
   buttonText: {fileID: 136548495}
   pinText: {fileID: 1802910103}
   banannaText: {fileID: 499495823}
-  knifecounter: 12
-  barbellcounter: 32
-  buttoncounter: 24
-  pincounter: 54
-  banannacounter: 22
+  knifecounter: 1
+  barbellcounter: 20
+  buttoncounter: 15
+  pincounter: 25
+  banannacounter: 999
 --- !u!1 &1802910100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,18 +1445,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338c43a34b1ebea4abc8fad6c14b0c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTimerChange:
+    m_PersistentCalls:
+      m_Calls: []
   spawnSpeedModifier: 0.1
   spawnPosition: 15
   initialSpawnDelay: 3
   spawnDelayLimit: 1
-  obstacle: {fileID: 6647506956798089364, guid: 52c953b63c682244e91e6b25b71367df, type: 3}
+  OnVisualsUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1797006131}
+        m_TargetAssemblyTypeName: UpdateText, Assembly-CSharp
+        m_MethodName: invUpda
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   selection:
-  - {fileID: 2564617165296702844, guid: 511f8fb2a2bd3194e9722b90d5568bbb, type: 3}
   - {fileID: 6409160128096467868, guid: 7cf96437f95c19e4d9ed6941f51508de, type: 3}
+  - {fileID: 2564617165296702844, guid: 511f8fb2a2bd3194e9722b90d5568bbb, type: 3}
   - {fileID: 5545231150052741515, guid: 409625bc93e37854ba245f2bf588f216, type: 3}
   - {fileID: 2979122404374480524, guid: de8c904955c59364aa8f22328f06a7a8, type: 3}
   - {fileID: 803515633165341893, guid: fc591b52390ad464289a7522244f7479, type: 3}
-  inventory: 01000000140000000f00000019000000e7030000
+  obstacle: {fileID: 6647506956798089364, guid: 52c953b63c682244e91e6b25b71367df, type: 3}
+  inventory: 14000000010000000f00000019000000e7030000
 --- !u!4 &1889358275
 Transform:
   m_ObjectHideFlags: 0
