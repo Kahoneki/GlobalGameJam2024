@@ -25,9 +25,6 @@ public class LevelController : MonoBehaviour
     public int slowTimeTimer = 200;
     public int slowTimeTime = 0;
     public int noseAmmo = 0;
-    private float savedIntMultiplier;
-    private bool dumbellHit = false;
-    private int stopDelay = 0;
     [SerializeField] int stopDelayTime = 1000;
     [SerializeField] float speedCatchupInterpolation = 0.01f;
     [SerializeField] float changeRate = 0.7f;
@@ -36,8 +33,6 @@ public class LevelController : MonoBehaviour
 
     public int maxLives = 10;
     public int livesLeft;
-
- 
 
     //setup on creation
     private void Awake()
@@ -51,7 +46,7 @@ public class LevelController : MonoBehaviour
     }
 
     //when end
-    
+
     private void OnDestroy()
     {
         if (Instance == this)
@@ -63,11 +58,9 @@ public class LevelController : MonoBehaviour
     {
         levelCompletionPercentage += Time.deltaTime / levelTime;
 
-        if(!dumbellHit)
-        {
-            //Changes speed over time
-            baseSpeedMultiplier += changeRate * Time.deltaTime; // change this formula for speeding up over time
-        }
+        //Changes speed over time
+        baseSpeedMultiplier += changeRate * Time.deltaTime; // change this formula for speeding up over time
+
         //changes game speed depending on slowTime power up.
         if (slowTime) { speedMultiplier = baseSpeedMultiplier / 2; } else { speedMultiplier = baseSpeedMultiplier; }
         // probs do something with completion percentage
@@ -85,30 +78,6 @@ public class LevelController : MonoBehaviour
         //Timer to reset slowTime
         if (slowTimeTimer > 0) { slowTimeTimer--; }
         else if ((slowTimeTimer <= 0) && (slowTime)) { slowTime = false; }
-        
-        //checks if dumbell has been hit
-        if(dumbellHit)
-        {
-            //checks if delay has occured before restarting
-            if(stopDelay <= 0)
-            {
-                //increased speed exponentially till it reaches percentage of original speed.
-                speedMultiplier += Mathf.Lerp(speedMultiplier, savedIntMultiplier, speedCatchupInterpolation);
-                if (speedMultiplier >= baseSpeedMultiplier * 0.9f)
-                {
-                    //sets speed back to original
-                    speedMultiplier = baseSpeedMultiplier;
-                    dumbellHit = false;
-                    stopDelay = 0;
-                }
-            }
-            else
-            {
-                stopDelay--;
-            }
-            
-        }
-
     }
 
     //Debug to show road
@@ -148,6 +117,12 @@ public class LevelController : MonoBehaviour
         onHit.Invoke();
     }
 
+    //Hit Dumbell
+    public void Dumbelled()
+    {
+        onHit.Invoke();
+    }
+
     //Function to lose a health value
     public void Hit()
     {
@@ -166,15 +141,6 @@ public class LevelController : MonoBehaviour
     public void HitMine()
     {
         // play sound
-    }
-
-    //Saves current game speed and sets original to zero. 
-    public void HitDumbell()
-    {
-        dumbellHit = true;
-        savedIntMultiplier = speedMultiplier;
-        speedMultiplier = 0;
-        stopDelay = stopDelayTime;
     }
 
     public void Splat()

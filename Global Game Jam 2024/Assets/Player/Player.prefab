@@ -176,8 +176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 4
-  PinSpeedModifier: 1.5
+  PinSpeedModifier: 2
   pinResetDelayTime: 300
+  rotating: 1
 --- !u!114 &2411604056684377760
 MonoBehaviour:
   m_ObjectHideFlags: 0

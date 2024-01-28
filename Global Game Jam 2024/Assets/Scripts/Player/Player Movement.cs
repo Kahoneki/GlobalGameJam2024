@@ -13,7 +13,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float PinSpeedModifier = 1.5f;
     private Vector2 moveDirection;
     private float pinResetDelay = 0;
-    [SerializeField] float pinResetDelayTime = 300;
+    [SerializeField] float SplatSpeedModifier = 0.5f;
+    [SerializeField] float pinResetDelayTime = 8f;
+    private float splatResetDelay = 0;
+    [SerializeField] float splatResetDelayTime = 8f;
     public bool rotating = true;
     
     float smooth = 10.0f;
@@ -56,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            pinResetDelay--;
+            pinResetDelay -= Time.deltaTime;
         }
     }
 
@@ -101,9 +104,15 @@ public class PlayerMovement : MonoBehaviour
     //update speed when pin hit.
     public void pinHit()
     {
+        //Debug.Log("Hit Pin");
         speed = baseSpeed * PinSpeedModifier;
         pinResetDelay = pinResetDelayTime;
+        if (splatResetDelay > 0) { splatResetDelay = 0; }
     }
-
-
+    public void splatHit()
+    {
+        speed = baseSpeed * SplatSpeedModifier;
+        splatResetDelay = splatResetDelayTime;
+        if(pinResetDelay > 0) { pinResetDelay = 0; }
+    }
 }

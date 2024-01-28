@@ -19,7 +19,7 @@ public class ObstacleCollision : MonoBehaviour
                     LevelController.Instance.Obliterate();
                     break;
                 case "Dumbells(Clone)":
-                    LevelController.Instance.HitDumbell();
+                    LevelController.Instance.Dumbelled();
                     break;
                 case "Knife(Clone)":
                     LevelController.Instance.Knifed();
@@ -32,6 +32,10 @@ public class ObstacleCollision : MonoBehaviour
                     break;
                 case "Spillage(Clone)":
                     LevelController.Instance.Spin();
+                    PlayerMovement.Instance.splatHit();
+                    break;
+                case "Pin(Clone)":
+                    PlayerMovement.Instance.pinHit();
                     break;
                 default:
                     LevelController.Instance.onHit.Invoke();
