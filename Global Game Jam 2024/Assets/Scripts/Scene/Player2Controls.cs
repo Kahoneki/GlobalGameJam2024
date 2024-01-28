@@ -65,6 +65,7 @@ public class Player2Controls : SpawningBase
         for (int i = 0; i < selection.Length; i++)
         {
             counter++;
+            
             if (counter == selection.Length) { counter = 0; }
 
             // passing in the same index variable to select the affecting value, which then will be decreased everytime the relative object is spawned
@@ -72,6 +73,7 @@ public class Player2Controls : SpawningBase
             {
                 obstacle = selection[counter]; // in all other cases the obstacle will be set to the spawn function
                 OnVisualsUpdate.Invoke(counter, inventory[counter]);
+                
                 return;
             }
         }
@@ -79,4 +81,5 @@ public class Player2Controls : SpawningBase
         obstacle = null;
         OnVisualsUpdate.Invoke(counter, inventory[counter]);
     }
+   
 }
