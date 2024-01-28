@@ -38,7 +38,12 @@ public class SpawningBase : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        if(LevelController.Instance == null)
+        {
+            return;
+        }
         Gizmos.color = Color.red;
         Gizmos.DrawLine(new(spawnPosition, LevelController.Instance.roadSize), new(spawnPosition, -LevelController.Instance.roadSize));
+       
     }
 }
