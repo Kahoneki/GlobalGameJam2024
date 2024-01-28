@@ -194,6 +194,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2651847132237012288, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5302540616683877658, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: m_Name
       value: LevelBase
