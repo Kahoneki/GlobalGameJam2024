@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -60,14 +62,18 @@ public class LevelController : MonoBehaviour
     {
         levelCompletionPercentage += Time.deltaTime / levelTime;
 
+        if (levelCompletionPercentage >= 100)
+        {
+            SceneManager.LoadScene("GoodScoreScene");
+        }
+
         //Changes speed over time
         baseSpeedMultiplier += changeRate * Time.deltaTime; // change this formula for speeding up over time
 
         // probs do something with completion percentage
         if (livesLeft <= 0)
         {
-            Debug.Log("Quitting Here");
-            Application.Quit();
+            SceneManager.LoadScene("BadScoreScene");
         }
         //Debugs Avaliable Lives
         //Debug.Log("Lives left: " + livesLeft);
