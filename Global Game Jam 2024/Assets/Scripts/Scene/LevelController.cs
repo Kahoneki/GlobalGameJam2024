@@ -8,6 +8,8 @@ using UnityEngine.Events;
 public class LevelController : MonoBehaviour
 {
     public static LevelController Instance { get; private set; }
+    public UnityEvent onHit;
+    public UnityEvent onLifeGained;
 
     public float baseSpeedMultiplier = 1;
     public float speedMultiplier;
@@ -26,6 +28,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] int stopDelayTime = 1000;
     [SerializeField] float speedCatchupInterpolation = 0.01f;
     [SerializeField] float changeRate = 0.7f;
+    [SerializeField] GameObject splatObj;
     //public Player player; // edit once player script exists
 
     public int maxLives = 10;
@@ -88,7 +91,7 @@ public class LevelController : MonoBehaviour
             if(stopDelay <= 0)
             {
                 //increased speed exponentially till it reaches percentage of original speed.
-                speedMultiplier = speedMultiplier + Mathf.Lerp(speedMultiplier, savedIntMultiplier, speedCatchupInterpolation);
+                speedMultiplier += Mathf.Lerp(speedMultiplier, savedIntMultiplier, speedCatchupInterpolation);
                 if (speedMultiplier >= baseSpeedMultiplier * 0.9f)
                 {
                     //sets speed back to original
@@ -139,25 +142,41 @@ public class LevelController : MonoBehaviour
     //Function to lose two health values
     public void Knifed()
     {
-        livesLeft -=2;
-        if(livesLeft< 0) {livesLeft = 0;}
+        onHit.Invoke();
+        onHit.Invoke();
     }
+
     //Function to lose a health value
     public void Hit()
     {
         livesLeft -= 1;
     }
+
     //Sets lives to zero on banana hit
     public void Obliterate()
     {
-        livesLeft = 0;
+        for (int i = 0; i < livesLeft; i++)
+        {
+            onHit.Invoke();
+        }
     }
+
+    public void HitMine()
+    {
+        // play sound
+    }
+
     //Saves current game speed and sets original to zero. 
-    public void hitDumbell()
+    public void HitDumbell()
     {
         dumbellHit = true;
         savedIntMultiplier = speedMultiplier;
         speedMultiplier = 0;
         stopDelay = stopDelayTime;
+    }
+
+    public void Splat()
+    {
+        Instantiate(splatObj);
     }
 }

@@ -7,6 +7,6 @@ public class DumbellObstacle : MonoBehaviour
     //Stops car moving and restarts again to go back to original speed after few seconds.
     private void OnDestroy()
     {
-        LevelController.Instance.hitDumbell();
+        LevelController.Instance.HitDumbell();
     }
 }

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &21885939322153377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684639152378965138}
+  - component: {fileID: 7707296982557671259}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &684639152378965138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21885939322153377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7707296982557671259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21885939322153377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7235ccf9954f93d4190e995c5ce50bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSpeedModifier: 0.1
+  spawnPosition: 18
+  initialSpawnDelay: 4
+  spawnDelayLimit: 0.25
+  obstacles:
+  - {fileID: 2564617165296702844, guid: 511f8fb2a2bd3194e9722b90d5568bbb, type: 3}
+  - {fileID: 6409160128096467868, guid: 7cf96437f95c19e4d9ed6941f51508de, type: 3}
+  - {fileID: 5545231150052741515, guid: 409625bc93e37854ba245f2bf588f216, type: 3}
+  - {fileID: 2979122404374480524, guid: de8c904955c59364aa8f22328f06a7a8, type: 3}
+  - {fileID: 4749925417921453722, guid: 10976a42af6b2664d82ef2a4a8145452, type: 3}
+  - {fileID: 803515633165341893, guid: fc591b52390ad464289a7522244f7479, type: 3}
+  obstacleSpawnChances:
+  - 1
+  - 20
+  - 25
+  - 4
+  - 20
+  - 30
+  powerups:
+  - {fileID: 7818157854533787002, guid: e4c20544e5df0644db11a5cc37fde7cc, type: 3}
+  - {fileID: 1085973660314692185, guid: c3bc43d09973b6145b0b4147d5a43301, type: 3}
+  - {fileID: 4130140114034122125, guid: 584002eed0c0a9b438614fc63fd72ce8, type: 3}
+  - {fileID: 5630996701543998583, guid: e662cb1506039624e80f407c7990a6eb, type: 3}
+  powerupSpawnChances:
+  - 10
+  - 50
+  - 25
+  - 15

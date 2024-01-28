@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7679971883498044773}
   - component: {fileID: 7882536587242796370}
   - component: {fileID: 8400997570010482021}
-  - component: {fileID: 4748245051108737084}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Obstacle
@@ -178,15 +177,3 @@ MonoBehaviour:
   rb: {fileID: 7679971883498044773}
   oTransform: {fileID: 1060950431833585707}
   moveSpeedMultiplier: 1
---- !u!114 &4748245051108737084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2564617165296702844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d92e8e2c56c45c42b94d6274ad5eccd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
