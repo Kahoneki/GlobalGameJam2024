@@ -9,6 +9,8 @@ using UnityEngine.Events;
 
 public class LevelController : MonoBehaviour
 {
+
+
     public static LevelController Instance { get; private set; }
     public UnityEvent onHit;
     public UnityEvent onLifeGained;

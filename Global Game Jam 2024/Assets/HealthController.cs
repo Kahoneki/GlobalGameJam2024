@@ -20,6 +20,7 @@ public class HealthController : MonoBehaviour
         losehealth();
     }
 
+
     public void losehealth()
     {
        
