@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    public static PlayerMovement Instance { get; private set; }
     //script for player movement
     private Rigidbody2D car;
     [SerializeField] float baseSpeed = 10;
@@ -17,25 +15,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float pinResetDelayTime = 8f;
     private float splatResetDelay = 0;
     [SerializeField] float splatResetDelayTime = 8f;
+    [SerializeField] private ParticleSystem WindParticles;
     public bool rotating = true;
     
     float smooth = 10.0f;
     float tiltAngle = 15.0f;
 
     //setup on creation
-    private void Awake()
+    private void Awake()    
     {
-        if (Instance != null)
-            Destroy(gameObject);
-        else
-            Instance = this;
-    }
-
-    //remove validation when destroyed
-    private void OnDestroy()
-    {
-        if (Instance == this)
-            Instance = null;
+        //EndParticles();
     }
 
     // Start is called before the first frame update
@@ -56,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         if(pinResetDelay <=0)
         {
             speed = baseSpeed;
+            //EndParticles();
         }
         else
         {
@@ -108,11 +98,32 @@ public class PlayerMovement : MonoBehaviour
         speed = baseSpeed * PinSpeedModifier;
         pinResetDelay = pinResetDelayTime;
         if (splatResetDelay > 0) { splatResetDelay = 0; }
+        //StartParticles();
+
     }
     public void splatHit()
     {
         speed = baseSpeed * SplatSpeedModifier;
         splatResetDelay = splatResetDelayTime;
         if(pinResetDelay > 0) { pinResetDelay = 0; }
+        //EndParticles();
     }
+    /*
+    public void StartParticles()
+    {
+        if (!WindParticles.GetComponent<ParticleSystem>().isPlaying)
+        {
+            WindParticles..Play();
+        }
+    }
+    public void EndParticles()
+    {
+        
+        if (WindParticles.GetComponent<ParticleSystem>().isPlaying)
+        {
+            WindParticles.GetComponent<ParticleSystem>().Stop();
+        }
+        
+    }
+    */
 }
