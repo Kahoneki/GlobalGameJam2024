@@ -32,6 +32,7 @@ public class SpawningAlternative : SpawningBase
             }
             else // obstacle
             {
+                if (obstacles.Length == 0) return;
                 objToSpawn = obstacles[^1];
                 for (int i = 0; i < obstacles.Length - 1; i++)
                 {
