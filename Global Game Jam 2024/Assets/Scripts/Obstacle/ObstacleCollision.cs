@@ -32,6 +32,7 @@ public class ObstacleCollision : MonoBehaviour
                     break;
                 case "Spillage(Clone)":
                     LevelController.Instance.Spin();
+                    PlayerMovement.Instance.splatHit();
                     break;
                 case "Pin(Clone)":
                     PlayerMovement.Instance.pinHit();
