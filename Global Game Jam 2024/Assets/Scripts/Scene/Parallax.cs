@@ -28,10 +28,10 @@ public class Parallax : MonoBehaviour
     void Update() {
         
 
-        Vector3 deltaPos = new Vector3(parallaxSpeed * moveSpeed * Time.deltaTime, 0, 0);
+        Vector3 deltaPos = new Vector3(parallaxSpeed * moveSpeed *LevelController.Instance.speedMultiplier * Time.deltaTime, 0, 0);
         transform.position -= deltaPos;
         if (transform.position.x <= 2 * -(horizontalCameraHalfSize + spriteLength/2)) { //Out of bounds
-            ParallaxFactory.Instance.SpawnNewLayer(gameObject.layer, parallaxSpeed * moveSpeed); //Offset is between actual position and expected position at time of destruction
+            ParallaxFactory.Instance.SpawnNewLayer(gameObject.layer, deltaPos.x); //Offset is between actual position and expected position at time of destruction
             Destroy(gameObject);
         }
     }
