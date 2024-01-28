@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851d2a1ec44cec644a4a86d418832c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  etherealSound: {fileID: 8300000, guid: 3b19dab3de1efa74782915cdcb507840, type: 3}
   OnHit:
     m_PersistentCalls:
       m_Calls:
@@ -233,6 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf0a1cdc3c660642929a471c3146bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noseAmmo: 0
   delayTime: 500
   clownNose: {fileID: 2010440221908156568, guid: 7ea5dec4f600e2a42bef6d4e1e1e60ff, type: 3}
+  noseAmmo: 0

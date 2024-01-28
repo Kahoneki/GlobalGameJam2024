@@ -49,6 +49,7 @@ public class ObstacleCollision : MonoBehaviour
             {
                 case "EtherealPowerUp":
                     LevelController.Instance.MakeEthereal();
+
                     break;
                 case "HealthPowerUp":
                     LevelController.Instance.onLifeGained.Invoke();
