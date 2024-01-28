@@ -15,19 +15,19 @@ public class ObstacleCollision : MonoBehaviour
         {
             switch (col.name)
             {
-                case "Banana":
+                case "Banana(Clone)":
                     LevelController.Instance.Obliterate();
                     break;
-                case "Dumbells":
+                case "Dumbells(Clone)":
                     LevelController.Instance.HitDumbell();
                     break;
-                case "Knife":
+                case "Knife(Clone)":
                     LevelController.Instance.Knifed();
                     break;
-                case "Landmine":
+                case "Landmine(Clone)":
                     LevelController.Instance.HitMine();
                     break;
-                case "BalloonAnimal":
+                case "BalloonAnimal(Clone)":
                     LevelController.Instance.Splat();
                     break;
                 default:
