@@ -13,7 +13,7 @@ public class LevelController : MonoBehaviour
     public UnityEvent onHit;
     public UnityEvent onLifeGained;
 
-    public float baseSpeedMultiplier = 1;
+    private float baseSpeedMultiplier = 1f;
     public float speedMultiplier;
     public float levelCompletionPercentage = 0;
     [SerializeField] float levelTime = 120; // level lasts 120 seconds
@@ -30,15 +30,16 @@ public class LevelController : MonoBehaviour
     [SerializeField] float changeRate = 0.7f;
     [SerializeField] GameObject splatObj;
     [SerializeField] Transform player;
+    [SerializeField] float slowTimeMultiplier = 0.5f;
 
     public int maxLives = 10;
-    public int livesLeft;
+    static public int livesLeft;
 
     //setup on creation
     private void Awake()
     {
-        livesLeft = maxLives;
         speedMultiplier = baseSpeedMultiplier;
+        livesLeft = maxLives;
         if (Instance != null && Instance != this)
             Destroy(gameObject);
         else
@@ -61,8 +62,6 @@ public class LevelController : MonoBehaviour
         //Changes speed over time
         baseSpeedMultiplier += changeRate * Time.deltaTime; // change this formula for speeding up over time
 
-        //changes game speed depending on slowTime power up.
-        if (slowTime) { speedMultiplier = baseSpeedMultiplier / 2; } else { speedMultiplier = baseSpeedMultiplier; }
         // probs do something with completion percentage
         if (livesLeft <= 0)
         {
@@ -77,7 +76,15 @@ public class LevelController : MonoBehaviour
         else if ((EtherealTimer <= 0) && (Ethereal)) { Ethereal = false; }
         //Timer to reset slowTime
         if (slowTimeTimer > 0) { slowTimeTimer--; }
-        else if ((slowTimeTimer <= 0) && (slowTime)) { slowTime = false; }
+        else if ((slowTimeTimer <= 0) && (slowTime)) 
+        {
+            speedMultiplier += (float )Mathf.Lerp(speedMultiplier, baseSpeedMultiplier, 0.1f);
+            if(speedMultiplier >= baseSpeedMultiplier*0.9)
+            {
+                speedMultiplier = baseSpeedMultiplier;
+                slowTime = false;
+            }
+        }
     }
 
     //Debug to show road
@@ -106,6 +113,7 @@ public class LevelController : MonoBehaviour
     //Function to slowTime
     public void SlowTime()
     {
+        speedMultiplier = baseSpeedMultiplier * slowTimeMultiplier;
         slowTime = true;
         slowTimeTimer = slowTimeTime;
     }
