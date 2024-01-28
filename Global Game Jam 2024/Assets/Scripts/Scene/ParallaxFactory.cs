@@ -30,15 +30,10 @@ public class ParallaxFactory : MonoBehaviour
             Instance = null;
     }
 
-
-    void Start() {
-        //Automatically positioning factory to correct position
-        transform.position = new Vector3(Parallax.spriteLength, 0, 0); //
-    }
-
-    [HideInInspector] public void SpawnNewLayer(int layer, float speed) {
-        int index = layer - 6;
-        layerTransforms[index] = Instantiate(layerTypes[index], layerTransforms[index].position + Vector3.right * (Parallax.spriteLength - speed * Time.deltaTime), transform.rotation).transform;
+    [HideInInspector] public void MoveLayer(GameObject layerObject, float speed) {
+        int index = layerObject.layer - 6;
+        layerObject.transform.position = layerTransforms[index].position + Vector3.right * (Parallax.spriteLength - speed * Time.deltaTime * LevelController.Instance.speedMultiplier);
+        layerTransforms[index] = layerObject.transform;
     }
 
 }

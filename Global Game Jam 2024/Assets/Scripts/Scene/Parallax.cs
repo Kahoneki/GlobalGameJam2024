@@ -6,7 +6,7 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     private float parallaxSpeed; //Layer dependent - units per frame
-    private float moveSpeed = 10f;
+    private float moveSpeed = 100f;
     [HideInInspector] public static float spriteLength;
 
     private float horizontalCameraHalfSize;
@@ -22,17 +22,14 @@ public class Parallax : MonoBehaviour
         
         spriteLength = GetComponent<SpriteRenderer>().bounds.size.x;
         
-        horizontalCameraHalfSize = Camera.main.orthographicSize * (16f/9f);
+        horizontalCameraHalfSize = Camera.main.orthographicSize * ((float)Screen.width/Screen.height);
     }
 
     void Update() {
-        
-
-        Vector3 deltaPos = new Vector3(parallaxSpeed * moveSpeed *LevelController.Instance.speedMultiplier * Time.deltaTime, 0, 0);
+        Vector3 deltaPos = new Vector3(parallaxSpeed * moveSpeed * LevelController.Instance.speedMultiplier * Time.deltaTime, 0, 0);
         transform.position -= deltaPos;
         if (transform.position.x <= 2 * -(horizontalCameraHalfSize + spriteLength/2)) { //Out of bounds
-            ParallaxFactory.Instance.SpawnNewLayer(gameObject.layer, deltaPos.x); //Offset is between actual position and expected position at time of destruction
-            Destroy(gameObject);
+            ParallaxFactory.Instance.MoveLayer(gameObject, parallaxSpeed * moveSpeed);
         }
     }
 }
