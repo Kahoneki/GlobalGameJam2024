@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawningBase : MonoBehaviour
 {
+    public UnityEvent<float, float> OnTimerChange;
+
     [SerializeField] float spawnSpeedModifier = 0.1f;
     [SerializeField] float spawnPosition = 18f;
     [SerializeField] float initialSpawnDelay = 1000;
@@ -23,6 +26,7 @@ public class SpawningBase : MonoBehaviour
         spawnDelay = initialSpawnDelay - ((LevelController.Instance.speedMultiplier * spawnSpeedModifier));
         if (spawnDelay < spawnDelayLimit) { spawnDelay = spawnDelayLimit; }
         spawnTimer -= Time.deltaTime;
+        OnTimerChange.Invoke(spawnTimer, spawnDelay);
     }
 
     protected void SpawnObject(GameObject objectToSpawn, float spawnY)
