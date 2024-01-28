@@ -22,15 +22,17 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (clown.livesLeft >= 9)
+
+        
+        if (LevelController.livesLeft >= 9)
         {
             counterText.text = "A";
         }
-       else  if (clown.livesLeft >= 7)
+       else  if (LevelController.livesLeft >= 7)
         {
             counterText.text = "B";
         }
-       else if (clown.livesLeft >= 5)
+       else if (LevelController.livesLeft >= 5)
         {
             counterText.text = "C";
         }
