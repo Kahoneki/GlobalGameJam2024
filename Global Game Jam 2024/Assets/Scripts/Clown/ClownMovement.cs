@@ -19,6 +19,7 @@ public class ClownMovement : MonoBehaviour
     void Start()
     {
         rotation = Random.Range(Mathf.PI*1.4f, Mathf.PI*1.1f);
+        rb.angularVelocity = rotateSpeed;
     }
 
     // Update is called once per frame
@@ -26,19 +27,20 @@ public class ClownMovement : MonoBehaviour
     {
         if(spinning)
         {
-            rb.velocityY = (float)moveSpeed * Mathf.Sin(rotation) * LevelController.Instance.speedMultiplier * Time.deltaTime;
-            rb.angularVelocity = rotateSpeed * Time.deltaTime;
+            rb.velocityY = (float)moveSpeed * Mathf.Sin(rotation) * LevelController.Instance.speedMultiplier;
+            
         }
         if(spinTimer <= 0)
         {
+            rb.angularVelocity = 0;
             spinning = false;
+            tf.rotation = Quaternion.Euler(0, 0, 0);
+            SR.sprite = deathSprite;
         }
         else
         {
-            tf.rotation = Quaternion.Euler(0, 0, 0);
-            SR.sprite = deathSprite;
             spinTimer--;
-        }
+        }   
         
         rb.velocityX = (float) moveSpeed * Mathf.Cos(rotation) * LevelController.Instance.speedMultiplier * Time.deltaTime;
         
