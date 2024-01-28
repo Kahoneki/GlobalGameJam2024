@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection;
     private float pinResetDelay = 0;
     [SerializeField] float pinResetDelayTime = 300;
+    public bool rotating = true;
     
     float smooth = 10.0f;
     float tiltAngle = 15.0f;
@@ -62,7 +63,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() // updates at a fixed interval so movement aint to buggy
     {
         Move();
-        slerp();
+        if (rotating)
+            slerp();
     }
 
     void inputs() 

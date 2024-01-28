@@ -30,6 +30,9 @@ public class ObstacleCollision : MonoBehaviour
                 case "BalloonAnimal(Clone)":
                     LevelController.Instance.Splat();
                     break;
+                case "Spillage(Clone)":
+                    LevelController.Instance.Spin();
+                    break;
                 default:
                     LevelController.Instance.onHit.Invoke();
                     break;

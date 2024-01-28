@@ -1,4 +1,6 @@
+using DG.Tweening;
 using NUnit.Framework.Constraints;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -14,6 +16,7 @@ public class LevelController : MonoBehaviour
     public float baseSpeedMultiplier = 1;
     public float speedMultiplier;
     public float levelCompletionPercentage = 0;
+    [SerializeField] float levelTime = 120; // level lasts 120 seconds
     public float roadSize = 2;
     public bool Ethereal = false;
     public bool slowTime = false;
@@ -29,7 +32,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] float speedCatchupInterpolation = 0.01f;
     [SerializeField] float changeRate = 0.7f;
     [SerializeField] GameObject splatObj;
-    //public Player player; // edit once player script exists
+    [SerializeField] Transform player;
 
     public int maxLives = 10;
     public int livesLeft;
@@ -61,10 +64,12 @@ public class LevelController : MonoBehaviour
     //Update Loop
     private void Update()
     {
+        levelCompletionPercentage += Time.deltaTime / levelTime;
+
         if(!dumbellHit)
         {
             //Changes speed over time
-            baseSpeedMultiplier += changeRate; // change this formula for speeding up over time
+            baseSpeedMultiplier += changeRate * Time.deltaTime; // change this formula for speeding up over time
         }
         //changes game speed depending on slowTime power up.
         if (slowTime) { speedMultiplier = baseSpeedMultiplier / 2; } else { speedMultiplier = baseSpeedMultiplier; }
@@ -178,5 +183,12 @@ public class LevelController : MonoBehaviour
     public void Splat()
     {
         Instantiate(splatObj);
+    }
+
+    public void Spin()
+    {
+        player.GetComponent<PlayerMovement>().rotating = false;
+        player.DORotate(Vector3.forward * 360, .5f, RotateMode.FastBeyond360)
+            .OnComplete(() => { player.GetComponent<PlayerMovement>().rotating = true; });
     }
 }

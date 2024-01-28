@@ -120,6 +120,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &709064096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7138498880644059217, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+  m_PrefabInstance: {fileID: 1904788198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1904788198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +136,14 @@ PrefabInstance:
     - target: {fileID: 5302540616683877658, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: m_Name
       value: LevelBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 709064096}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: changeRate
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 8730163398774198736, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,6 +184,34 @@ PrefabInstance:
     - target: {fileID: 8730163398774198736, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: obstacles.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacles.Array.data[5]'
+      value: 
+      objectReference: {fileID: 4749925417921453722, guid: d9d2ec329afdd47438e313fc8d9b9cfc, type: 3}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacles.Array.data[6]'
+      value: 
+      objectReference: {fileID: 803515633165341893, guid: fc591b52390ad464289a7522244f7479, type: 3}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: obstacleSpawnChances.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacleSpawnChances.Array.data[2]'
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacleSpawnChances.Array.data[5]'
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacleSpawnChances.Array.data[6]'
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
