@@ -12,7 +12,7 @@ public class LevelController : MonoBehaviour
     public float baseSpeedMultiplier = 1;
     public float speedMultiplier;
     public float levelCompletionPercentage = 0;
-    public float roadSize = 4.5f;
+    public float roadSize = 2;
     public bool Ethereal = false;
     public bool slowTime = false;
     public int EtherealTime = 200;
@@ -25,6 +25,7 @@ public class LevelController : MonoBehaviour
     private int stopDelay = 0;
     [SerializeField] int stopDelayTime = 1000;
     [SerializeField] float speedCatchupInterpolation = 0.01f;
+    [SerializeField] float changeRate = 0.7f;
     //public Player player; // edit once player script exists
 
     public int maxLives = 10;
@@ -60,13 +61,14 @@ public class LevelController : MonoBehaviour
         if(!dumbellHit)
         {
             //Changes speed over time
-            baseSpeedMultiplier += Time.deltaTime; // change this formula for speeding up over time
+            baseSpeedMultiplier += changeRate; // change this formula for speeding up over time
         }
         //changes game speed depending on slowTime power up.
         if (slowTime) { speedMultiplier = baseSpeedMultiplier / 2; } else { speedMultiplier = baseSpeedMultiplier; }
         // probs do something with completion percentage
         if (livesLeft <= 0)
         {
+            Debug.Log("Quitting Here");
             Application.Quit();
         }
         //Debugs Avaliable Lives
@@ -143,7 +145,7 @@ public class LevelController : MonoBehaviour
     //Function to lose a health value
     public void Hit()
     {
-        livesLeft -= 2;
+        livesLeft -= 1;
     }
     //Sets lives to zero on banana hit
     public void Obliterate()

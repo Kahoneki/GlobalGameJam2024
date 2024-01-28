@@ -21,7 +21,7 @@ public class ObstacleMovement : MonoBehaviour
 
         rb.angularVelocity = rotateSpeed;
 
-        if (oTransform.position.x < -3)
+        if (oTransform.position.x < -8)
         {
             Debug.Log("Destroying Object");
             Destroy(gameObject);
