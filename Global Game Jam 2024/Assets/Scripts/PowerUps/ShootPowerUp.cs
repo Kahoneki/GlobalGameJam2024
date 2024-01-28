@@ -6,6 +6,7 @@ public class ShootPowerUp : MonoBehaviour
 {
     private void OnDestroy()
     {
-        Shoot.Instance.noseAmmo = 3;
+        LevelController.Instance.player.GetComponent<Shoot>().noseAmmo = 3;
+        LevelController.Instance.noseAmmo = 3;
     }
 }

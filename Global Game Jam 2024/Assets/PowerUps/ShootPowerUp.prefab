@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rotateSpeed: 0
-  rb: {fileID: 0}
+  rb: {fileID: 968433764453772038}
   oTransform: {fileID: 7100705604122575468}
   moveSpeedMultiplier: 1
 --- !u!50 &968433764453772038

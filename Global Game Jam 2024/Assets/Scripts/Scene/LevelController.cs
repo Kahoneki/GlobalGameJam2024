@@ -29,7 +29,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] float speedCatchupInterpolation = 0.01f;
     [SerializeField] float changeRate = 0.7f;
     [SerializeField] GameObject splatObj;
-    [SerializeField] Transform player;
+    [SerializeField] public Transform player;
     [SerializeField] float slowTimeMultiplier = 0.5f;
 
     public int maxLives = 10;

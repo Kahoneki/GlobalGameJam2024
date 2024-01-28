@@ -8,6 +8,7 @@ public class SpawningAlternative : SpawningBase
     [SerializeField] float[] obstacleSpawnChances;
     [SerializeField] GameObject[] powerups;
     [SerializeField] float[] powerupSpawnChances;
+    [SerializeField] float powerUpToObstacleChance;
 
     protected override void Update()
     {
@@ -16,17 +17,17 @@ public class SpawningAlternative : SpawningBase
         {
             GameObject objToSpawn;
             float ran = Random.Range(0.0f, 100.0f);
-            if (Random.Range(0, 100) < 5) // powerup
+            if (Random.Range(0, 100) < powerUpToObstacleChance) // powerup
             {
                 objToSpawn = powerups[^1];
-                for (int i = 0; i < obstacles.Length - 1; i++)
+                for (int i = 0; i < powerups.Length - 1; i++)
                 {
-                    if (ran < obstacleSpawnChances[i])
+                    if (ran <= powerupSpawnChances[i])
                     {
-                        objToSpawn = obstacles[i];
+                        objToSpawn = powerups[i];
                         break;
                     }
-                    ran -= obstacleSpawnChances[i];
+                    ran -= powerupSpawnChances[i];
                 }
             }
             else // obstacle
