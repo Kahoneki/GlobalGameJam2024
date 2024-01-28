@@ -15,7 +15,6 @@ public class UpdateText : MonoBehaviour
     public float knifecounter;
     public float barbellcounter;
     public float buttoncounter;
-    public float pincounter;
     public float banannacounter;
     // Start is called before the first frame update
     void Start()
@@ -57,7 +56,7 @@ public class UpdateText : MonoBehaviour
 
             case 4:
 
-                pinText.text = count.ToString();
+                pinText.text ="inf";
                 break;
 
 

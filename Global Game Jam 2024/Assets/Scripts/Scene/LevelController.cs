@@ -37,11 +37,7 @@ public class LevelController : MonoBehaviour
     public int maxLives = 10;
     public int livesLeft;
 
-    private void OnValidate()
-    {
-        if (Instance == null)
-            Instance = this;
-    }
+ 
 
     //setup on creation
     private void Awake()
@@ -55,6 +51,7 @@ public class LevelController : MonoBehaviour
     }
 
     //when end
+    
     private void OnDestroy()
     {
         if (Instance == this)
