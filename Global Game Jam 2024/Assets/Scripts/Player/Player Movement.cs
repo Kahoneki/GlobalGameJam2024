@@ -5,27 +5,48 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-
+    public static PlayerMovement Instance { get; private set; }
     //script for player movement
     private Rigidbody2D car;
-    
-    public float speed;
+    [SerializeField] float baseSpeed = 10;
+    private float speed;
+    [SerializeField] float PinSpeedModifier = 1.5f;
     private Vector2 moveDirection;
+    private float pinResetDelay = 0;
+    [SerializeField] float pinResetDelayTime = 300;
     
     float smooth = 10.0f;
     float tiltAngle = 15.0f;
 
-    
- 
+    //validate only one version of script running. 
+    private void OnValidate()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
 
+    //setup on creation
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+            Instance = this;
+    }
 
+    //remove validation when destroyed
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
 
     // Start is called before the first frame update
     void Start()
     { 
         //Getting the rigidbody component of the game object
         car = GetComponent<Rigidbody2D>();
-        
+        speed = baseSpeed;
     }
 
     // Update is called once per frame
@@ -33,7 +54,16 @@ public class PlayerMovement : MonoBehaviour
     {
         //function calls for inputs and fixed update
            inputs();
-           FixedUpdate();   
+           FixedUpdate(); 
+        //reset speed to normal after delay from intial hit of pin. 
+        if(pinResetDelay <=0)
+        {
+            speed = baseSpeed;
+        }
+        else
+        {
+            pinResetDelay--;
+        }
     }
 
     void FixedUpdate() // updates at a fixed interval so movement aint to buggy
@@ -73,9 +103,12 @@ public class PlayerMovement : MonoBehaviour
         else  {
           transform.rotation = Quaternion.Slerp(transform.rotation , target , Time.deltaTime *smooth); //applying the rotation between the transform and target
         }
-        
-
-
+    }
+    //update speed when pin hit.
+    public void pinHit()
+    {
+        speed = baseSpeed * PinSpeedModifier;
+        pinResetDelay = pinResetDelayTime;
     }
 
 

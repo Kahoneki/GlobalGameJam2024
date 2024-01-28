@@ -258,9 +258,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3530594f98d8f4fb2deadd8e18c63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseSpeedMultiplier: 1
   speedMultiplier: 1
   levelCompletionPercentage: 0
   roadSize: 4.5
+  Ethereal: 0
+  slowTime: 0
+  EtherealTime: 200
+  EtherealTimer: 0
+  slowTimeTimer: 200
+  slowTimeTime: 0
+  noseAmmo: 0
+  maxLives: 10
   livesLeft: 0
 --- !u!4 &528556830
 Transform:

@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-
+    public GameObject PauseMenu;
 
     public void begin()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Scene01");
     }
 
 
@@ -32,6 +32,17 @@ public class MenuController : MonoBehaviour
     public void Controls()
     {
         SceneManager.LoadScene("Controls");
+    }
+
+    public void ResumeClicked()
+    {
+       PauseMenu.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Scene02");
     }
 
 
