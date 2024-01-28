@@ -7,11 +7,9 @@ using UnityEngine.UI;
 public class UpdateText : MonoBehaviour
 {
     Player2Controls player;
-    public TextMeshProUGUI barbellText;
-    public TextMeshProUGUI knifeText;
-    public TextMeshProUGUI buttonText;
-    public TextMeshProUGUI pinText;
-    public TextMeshProUGUI banannaText;
+    public TextMeshProUGUI GenericText;
+    [SerializeField] private Image img;
+    [SerializeField] Sprite[] sprites = new Sprite[5];
     public float knifecounter;
     public float barbellcounter;
     public float buttoncounter;
@@ -32,39 +30,9 @@ public class UpdateText : MonoBehaviour
     public void invUpda(int type, int count)
     {
      
-        switch (type) 
-        {
-            case 0:
-
-                barbellText.text = count.ToString();
-                    break;
-            case 1:
-
-                banannaText.text = count.ToString();
-                break;
-
-            case 2:
-
-                knifeText.text = count.ToString();
-                break;
-
-
-            case 3:
-
-                buttonText.text = count.ToString();
-                break;
-
-            case 4:
-
-                pinText.text ="inf";
-                break;
-
-
-
-
-
-        }
-
+        GenericText.text = count.ToString();
+        img.sprite = sprites[type];
+       
 
     }
 }
