@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 public class bulletCollision : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.CompareTag("Obstacle"))
+        if (col.gameObject.CompareTag("Obstacle"))
         {
-            Destroy(col);
+            Destroy(col.gameObject);
         }
     }
 }
