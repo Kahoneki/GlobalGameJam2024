@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ENDScenes/BadScoreScene.unity
     guid: 5ecacc0263b06204295ee36d5492a893
   - enabled: 1
-    path: Assets/Scenes/ENDScenes/GoodScoreScene.unity
+    path: Assets/Scenes/ENDScenes/BadScoreScene.unity
     guid: 9cd57841f8701534abc5272018628e0a
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
