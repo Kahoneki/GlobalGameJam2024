@@ -65,7 +65,8 @@ public class LevelController : MonoBehaviour
 
         if (levelCompletionPercentage >= 100)
         {
-            SceneManager.LoadScene("GoodScoreScene");
+            if (livesLeft >= 7) { SceneManager.LoadScene("GoodScoreScene"); }
+            else { SceneManager.LoadScene("BadScoreScreen"); }
         }
 
         //Changes speed over time
@@ -74,7 +75,7 @@ public class LevelController : MonoBehaviour
         // probs do something with completion percentage
         if (livesLeft <= 0)
         {
-            SceneManager.LoadScene("BadScoreScene");
+            SceneManager.LoadScene("DeathScene");
         }
         //Debugs Avaliable Lives
         //Debug.Log("Lives left: " + livesLeft);

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
 
-    LevelController levelController;
+    [SerializeField] LevelController levelController;
     private Slider progressSlider;
 
     public float FillSpeed = 120f;
@@ -30,7 +30,7 @@ public class ProgressBar : MonoBehaviour
     {
        if(progressSlider.value < targetProgress)
         {
-            progressSlider.value += FillSpeed * Time.deltaTime;
+            progressSlider.value = levelController.levelCompletionPercentage;
         } 
     }
 
