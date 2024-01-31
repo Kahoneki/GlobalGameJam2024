@@ -63,7 +63,7 @@ public class LevelController : MonoBehaviour
     {
         levelCompletionPercentage += Time.deltaTime / levelTime;
 
-        if (levelCompletionPercentage >= 100)
+        if (levelCompletionPercentage >= 1)
         {
             if (livesLeft >= 7) { SceneManager.LoadScene("GoodScoreScene"); }
             else { SceneManager.LoadScene("BadScoreScreen"); }
