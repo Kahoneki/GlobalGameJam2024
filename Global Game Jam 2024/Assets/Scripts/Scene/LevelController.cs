@@ -1,12 +1,6 @@
 using DG.Tweening;
-using NUnit.Framework.Constraints;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
@@ -94,19 +88,23 @@ public class LevelController : MonoBehaviour
         else if ((EtherealTimer <= 0) && (Ethereal)) 
         { 
             Ethereal = false;
-            GetComponent<SpriteRenderer>().material = baseMat;
+            player.GetComponent<SpriteRenderer>().material = baseMat;
         }
         //Timer to reset slowTime
-        if (slowTimeTimer > 0) { slowTimeTimer--; }
+        if (slowTimeTimer > 0) { slowTimeTimer--; } // currently slowed
         else if ((slowTimeTimer <= 0) && (slowTime)) 
         {
+            // currently slowed still, gradually speed back up
             speedMultiplier += (float )Mathf.Lerp(speedMultiplier, baseSpeedMultiplier, 0.1f);
-            if(speedMultiplier >= baseSpeedMultiplier*0.9)
+            if(speedMultiplier >= baseSpeedMultiplier*0.9) // pretty much back to speed
             {
-                speedMultiplier = baseSpeedMultiplier;
                 slowTime = false;
-                GetComponent<SpriteRenderer>().material = baseMat;
+                player.GetComponent<SpriteRenderer>().material = baseMat;
             }
+        }
+        else
+        {
+            speedMultiplier = baseSpeedMultiplier;
         }
     }
 
@@ -121,7 +119,7 @@ public class LevelController : MonoBehaviour
     public void MakeEthereal()
     {
         Ethereal = true;
-        GetComponent<SpriteRenderer>().material = etherialMat;
+        player.GetComponent<SpriteRenderer>().material = etherialMat;
         EtherealTimer = EtherealTime;
     }
 
@@ -137,7 +135,7 @@ public class LevelController : MonoBehaviour
     //Function to slowTime
     public void SlowTime()
     {
-        GetComponent<SpriteRenderer>().material = slimeMat;
+        player.GetComponent<SpriteRenderer>().material = slimeMat;
         speedMultiplier = baseSpeedMultiplier * slowTimeMultiplier;
         slowTime = true;
         slowTimeTimer = slowTimeTime;
