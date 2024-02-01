@@ -37,6 +37,7 @@ public class ObstacleCollision : MonoBehaviour
                     break;
                 case "Pin(Clone)":
                     LevelController.Instance.player.GetComponent<PlayerMovement>().pinHit();
+                    LevelController.Instance.onHit.Invoke();
                     break;
                 default:
                     LevelController.Instance.onHit.Invoke();
