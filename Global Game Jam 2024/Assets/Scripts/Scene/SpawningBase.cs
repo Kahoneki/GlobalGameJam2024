@@ -31,19 +31,18 @@ public class SpawningBase : MonoBehaviour
 
     protected void SpawnObject(GameObject objectToSpawn, float spawnY)
     {
-        GameObject newObject = Instantiate(objectToSpawn);
-        newObject.transform.position = new (spawnPosition, spawnY);
+        if (objectToSpawn != null)
+        {
+            GameObject newObject = Instantiate(objectToSpawn);
+            newObject.transform.position = new(spawnPosition, spawnY);
+        }
         spawnTimer = spawnDelay;
     }
 
     private void OnDrawGizmosSelected()
     {
-        if(LevelController.Instance == null)
-        {
-            return;
-        }
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(new(spawnPosition, LevelController.Instance.roadSize), new(spawnPosition, -LevelController.Instance.roadSize));
+        Gizmos.DrawLine(new(spawnPosition, 5), new(spawnPosition, -5));
        
     }
 }
