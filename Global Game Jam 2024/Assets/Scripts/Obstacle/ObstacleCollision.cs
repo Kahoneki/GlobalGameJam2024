@@ -10,7 +10,7 @@ public class ObstacleCollision : MonoBehaviour
     [SerializeField] snotController snozz;
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (LevelController.Instance.Ethereal) return;
+        if (LevelController.Instance.ethereal) return;
 
         if (col.CompareTag("Obstacle"))
         {

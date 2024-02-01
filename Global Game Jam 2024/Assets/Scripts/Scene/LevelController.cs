@@ -12,23 +12,22 @@ public class LevelController : MonoBehaviour
     public UnityEvent onLifeGained;
 
     [SerializeField] float baseSpeedMultiplier = 1f;
-    public float speedMultiplier;
-    public float levelCompletionPercentage = 0;
     [SerializeField] float levelTime = 120; // level lasts 120 seconds
-    public float roadSize = 2;
-    public bool Ethereal = false;
-    public bool slowTime = false;
-    public int EtherealTime = 200;
-    public int EtherealTimer = 0;
-    public int slowTimeTimer = 200;
-    public int slowTimeTime = 0;
-    public int noseAmmo = 0;
-    [SerializeField] int stopDelayTime = 1000;
+    [SerializeField] bool slowTime = false;
+    [SerializeField] float etherealTime = 20;
+    [SerializeField] float etherealTimer = 0;
+    [SerializeField] float slowTimeTimer = 20;
+    [SerializeField] float slowTimeTime = 0;
     [SerializeField] float changeRate = 0.7f;
     [SerializeField] GameObject splatObj;
     [SerializeField] public Transform player;
     [SerializeField] float slowTimeMultiplier = 0.5f;
     [SerializeField] Material baseMat, etherialMat, slimeMat;
+    public int noseAmmo = 0;
+    public float roadSize = 2;
+    public bool ethereal = false;
+    public float speedMultiplier;
+    public float levelCompletionPercentage = 0;
 
     public int maxLives = 10;
     public static int livesLeft;
@@ -84,10 +83,10 @@ public class LevelController : MonoBehaviour
         Debug.Log("Lives left: " + livesLeft);
 
         //Timer to reset invincibility
-        if (EtherealTimer > 0) { EtherealTimer--; }
-        else if ((EtherealTimer <= 0) && (Ethereal))
+        if (etherealTimer > 0) { etherealTimer -= Time.deltaTime; }
+        else if ((etherealTimer <= 0) && (ethereal))
         {
-            Ethereal = false;
+            ethereal = false;
             player.GetComponent<SpriteRenderer>().material = baseMat;
         }
         //Timer to reset slowTime
@@ -118,9 +117,9 @@ public class LevelController : MonoBehaviour
     //Function to make player invicible over a set time period when power up collected
     public void MakeEthereal()
     {
-        Ethereal = true;
+        ethereal = true;
         player.GetComponent<SpriteRenderer>().material = etherialMat;
-        EtherealTimer = EtherealTime;
+        etherealTimer = etherealTime;
     }
 
     //Function to increase lives when power up collected
@@ -163,7 +162,8 @@ public class LevelController : MonoBehaviour
     //Sets lives to zero on banana hit
     public void Obliterate()
     {
-        for (int i = 0; i < livesLeft; i++)
+        int clownsToKill = livesLeft;
+        for (int i = 0; i < clownsToKill; i++)
         {
             onHit.Invoke();
         }
