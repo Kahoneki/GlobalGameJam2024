@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 2261728}
   - component: {fileID: 2261727}
   - component: {fileID: 2261731}
-  - component: {fileID: 2261730}
   m_Layer: 0
   m_Name: kid2_0
   m_TagString: Untagged
@@ -230,45 +229,6 @@ Transform:
   - {fileID: 865376986}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2261730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2261726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3530594f98d8f4fb2deadd8e18c63b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
-  onLifeGained:
-    m_PersistentCalls:
-      m_Calls: []
-  baseSpeedMultiplier: 1
-  speedMultiplier: 0
-  levelCompletionPercentage: 0
-  levelTime: 120
-  roadSize: 2
-  Ethereal: 0
-  slowTime: 0
-  EtherealTime: 200
-  EtherealTimer: 0
-  slowTimeTimer: 200
-  slowTimeTime: 0
-  noseAmmo: 0
-  stopDelayTime: 1000
-  changeRate: 0.7
-  splatObj: {fileID: 0}
-  player: {fileID: 0}
-  slowTimeMultiplier: 0.5
-  baseMat: {fileID: 0}
-  etherialMat: {fileID: 0}
-  slimeMat: {fileID: 0}
-  maxLives: 10
 --- !u!114 &2261731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,14 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e40d0ea5e53694cb3942a0312a0c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clown: {fileID: 2261730}
   counterText: {fileID: 1296445053}
   livesText: {fileID: 1126560308}
-  counter: 0
-  Agrade: A
-  Bgrade: B
-  Cgrade: C
-  Fail: Fail
 --- !u!1 &223392072
 GameObject:
   m_ObjectHideFlags: 0
