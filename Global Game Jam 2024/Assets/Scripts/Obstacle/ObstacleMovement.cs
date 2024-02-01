@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 100f;
+    [SerializeField] float moveSpeed = 10f;
 
     [SerializeField] float rotateSpeed = 0f;
 
@@ -17,8 +17,9 @@ public class ObstacleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocityX = -moveSpeed * LevelController.Instance.speedMultiplier * moveSpeedMultiplier;
-
+        //rb.velocityX = -moveSpeed * LevelController.Instance.speedMultiplier * moveSpeedMultiplier;
+        Vector3 deltaPos = new Vector3(moveSpeed * LevelController.Instance.speedMultiplier * Time.deltaTime, 0, 0);
+        transform.position -= deltaPos;
         rb.angularVelocity = rotateSpeed;
 
         if (oTransform.position.x < -8)
