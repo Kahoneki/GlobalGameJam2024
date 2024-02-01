@@ -88,11 +88,11 @@ public class LevelController : MonoBehaviour
             player.GetComponent<SpriteRenderer>().material = baseMat;
         }
         //Timer to reset slowTime
-        if (slowTimeTimer > 0) { slowTimeTimer--; } // currently slowed
+        if (slowTimeTimer > 0) { slowTimeTimer-= Time.deltaTime; } // currently slowed
         else if ((slowTimeTimer <= 0) && (slowTime)) 
         {
             // currently slowed still, gradually speed back up
-            speedMultiplier += (float )Mathf.Lerp(speedMultiplier, baseSpeedMultiplier, 0.1f);
+            speedMultiplier += (float )Mathf.Lerp(baseSpeedMultiplier*slowTimeMultiplier, baseSpeedMultiplier, 0.01f) * Time.deltaTime;
             if(speedMultiplier >= baseSpeedMultiplier*0.9) // pretty much back to speed
             {
                 slowTime = false;
