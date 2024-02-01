@@ -196,21 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851d2a1ec44cec644a4a86d418832c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9137713490576948136}
-        m_TargetAssemblyTypeName: SpawnClown, Assembly-CSharp
-        m_MethodName: spawnClown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  snozz: {fileID: 0}
 --- !u!114 &9137713490576948136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 500
   clownNose: {fileID: 2010440221908156568, guid: 7ea5dec4f600e2a42bef6d4e1e1e60ff, type: 3}
+  snozz: {fileID: 0}
   noseAmmo: 0
 --- !u!199 &2818562946973665706
 ParticleSystemRenderer:
