@@ -23,7 +23,7 @@ public class SpawningBase : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        spawnDelay = initialSpawnDelay - ((LevelController.Instance.speedMultiplier * spawnSpeedModifier));
+        spawnDelay = initialSpawnDelay - (LevelController.Instance.speedMultiplier * spawnSpeedModifier);
         if (spawnDelay < spawnDelayLimit) { spawnDelay = spawnDelayLimit; }
         spawnTimer -= Time.deltaTime;
         OnTimerChange.Invoke(spawnTimer, spawnDelay);
