@@ -1047,38 +1047,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-      propertyPath: powerUpToObstacleChance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-      propertyPath: 'powerupSpawnChances.Array.data[0]'
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-      propertyPath: 'powerupSpawnChances.Array.data[1]'
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-      propertyPath: 'powerupSpawnChances.Array.data[3]'
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-      propertyPath: 'obstacleSpawnChances.Array.data[1]'
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-      propertyPath: 'obstacleSpawnChances.Array.data[2]'
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-      propertyPath: 'obstacleSpawnChances.Array.data[4]'
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-      propertyPath: 'obstacleSpawnChances.Array.data[5]'
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

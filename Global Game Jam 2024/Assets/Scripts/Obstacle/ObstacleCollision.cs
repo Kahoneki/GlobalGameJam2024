@@ -50,7 +50,6 @@ public class ObstacleCollision : MonoBehaviour
             {
                 case "EtherealPowerUp(Clone)":
                     LevelController.Instance.MakeEthereal();
-
                     break;
                 case "HealthPowerUp(Clone)":
                     LevelController.Instance.onLifeGained.Invoke();
