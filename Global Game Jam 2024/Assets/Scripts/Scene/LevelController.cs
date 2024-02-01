@@ -104,7 +104,6 @@ public class LevelController : MonoBehaviour
             if(speedMultiplier >= baseSpeedMultiplier*0.9) // pretty much back to speed
             {
                 slowTime = false;
-                player.GetComponent<SpriteRenderer>().material = baseMat;
             }
         }
         else

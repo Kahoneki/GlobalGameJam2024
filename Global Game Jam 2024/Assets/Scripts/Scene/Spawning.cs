@@ -34,7 +34,5 @@ public class Spawning : MonoBehaviour
             //Debug.Log("I have spawned an obstacle");
         }
         spawnTimer--;
-        
-
     }
 }
