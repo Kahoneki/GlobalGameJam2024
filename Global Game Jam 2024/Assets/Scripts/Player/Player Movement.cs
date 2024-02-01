@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //script for player movement
     private Rigidbody2D car;
-    [SerializeField] float baseSpeed = 10;
+    [SerializeField] float baseSpeed = 20;
     private float speed;
     [SerializeField] float PinSpeedModifier = 1.5f;
     private Vector2 moveDirection;

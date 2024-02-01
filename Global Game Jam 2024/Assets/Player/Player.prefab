@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65bdf69d8fefb34cafac13be1ead7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 4
+  baseSpeed: 10
   PinSpeedModifier: 3
   SplatSpeedModifier: 0.5
   pinResetDelayTime: 8
