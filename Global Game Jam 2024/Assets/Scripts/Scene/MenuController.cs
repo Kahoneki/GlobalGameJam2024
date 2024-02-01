@@ -6,7 +6,14 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject PauseMenu;
+    public GameObject PauseMenu, quitButton;
+
+    private void Awake()
+    {
+#if UNITY_WEBGL
+        Destroy(quitButton);
+#endif
+    }
 
     public void begin()
     {

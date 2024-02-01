@@ -15,12 +15,11 @@ public class SpawningAlternative : SpawningBase
         base.Update();
         if (spawnTimer <= 0)
         {
-            GameObject objToSpawn;
+            GameObject objToSpawn = null;
             float ran = Random.Range(0.0f, 100.0f);
             if (Random.Range(0, 100) < powerUpToObstacleChance) // powerup
             {
-                objToSpawn = powerups[^1];
-                for (int i = 0; i < powerups.Length - 1; i++)
+                for (int i = 0; i < powerups.Length; i++)
                 {
                     if (ran <= powerupSpawnChances[i])
                     {
@@ -32,9 +31,7 @@ public class SpawningAlternative : SpawningBase
             }
             else // obstacle
             {
-                if (obstacles.Length == 0) return;
-                objToSpawn = obstacles[^1];
-                for (int i = 0; i < obstacles.Length - 1; i++)
+                for (int i = 0; i < obstacles.Length; i++)
                 {
                     if (ran <= obstacleSpawnChances[i])
                     {
