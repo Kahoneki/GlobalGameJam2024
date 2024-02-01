@@ -1093,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 803515633165341893, guid: fc591b52390ad464289a7522244f7479, type: 3}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: powerUpToObstacleChance
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: obstacleSpawnChances.Array.size
