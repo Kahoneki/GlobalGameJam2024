@@ -6,26 +6,15 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public LevelController clown;
     [SerializeField] private TextMeshProUGUI counterText;
     [SerializeField] private TextMeshProUGUI livesText;
-    public float counter;
-    public string Agrade = "A";
-    public string Bgrade = "B";
-    public string Cgrade = "C";
-    public string Fail = "Fail";
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+
     void Update()
     { 
         if (LevelController.livesLeft >= 9)
         {
-        counterText.text = "Score: A";
+            counterText.text = "Score: A";
         }
         else  if (LevelController.livesLeft >= 7)
         {

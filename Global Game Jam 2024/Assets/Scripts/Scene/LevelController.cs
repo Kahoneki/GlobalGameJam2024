@@ -81,7 +81,7 @@ public class LevelController : MonoBehaviour
             else { SceneManager.LoadScene("DeathScene"); }
         }
         //Debugs Avaliable Lives
-        //Debug.Log("Lives left: " + livesLeft);
+        Debug.Log("Lives left: " + livesLeft);
 
         //Timer to reset invincibility
         if (EtherealTimer > 0) { EtherealTimer--; }
