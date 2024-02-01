@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ENDScenes/BadScoreScene.unity
     guid: 9cd57841f8701534abc5272018628e0a
   - enabled: 1
-    path: Assets/Scenes/ENDScenes/DeathScene.unity
+    path: Assets/Scenes/ENDScenes/DeathSceneMP.unity
     guid: 16cf9839c71565942806418a1f22bf37
   - enabled: 1
     path: Assets/Scenes/MultiPlayer.unity

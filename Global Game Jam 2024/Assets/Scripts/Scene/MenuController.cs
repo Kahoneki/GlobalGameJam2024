@@ -45,5 +45,10 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Scene02");
     }
 
+    public void RetryMP()
+    {
+        SceneManager.LoadScene("MultiPlayer");
+    }
+
 
 }
