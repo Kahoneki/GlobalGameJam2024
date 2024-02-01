@@ -59,13 +59,13 @@ public class LevelController : MonoBehaviour
 
         if (levelCompletionPercentage >= 1)
         {
-            if (livesLeft >= 7) 
+            if (livesLeft >= 7)
             {
                 if (SceneManager.GetActiveScene().name == "Main Scene") { SceneManager.LoadScene("GoodScoreScene"); }
                 else { SceneManager.LoadScene("GoodScoreSceneMP"); }
             }
-            else 
-            { 
+            else
+            {
                 if (SceneManager.GetActiveScene().name == "Main Scene") { SceneManager.LoadScene("BadScoreScene"); }
                 else { SceneManager.LoadScene("BadScoreSceneMP"); }
             }
@@ -77,7 +77,7 @@ public class LevelController : MonoBehaviour
         // probs do something with completion percentage
         if (livesLeft <= 0)
         {
-            if(SceneManager.GetActiveScene().name == "Main Scene") { SceneManager.LoadScene("DeathScene"); }
+            if (SceneManager.GetActiveScene().name == "Main Scene") { SceneManager.LoadScene("DeathScene"); }
             else { SceneManager.LoadScene("DeathScene"); }
         }
         //Debugs Avaliable Lives
@@ -85,8 +85,8 @@ public class LevelController : MonoBehaviour
 
         //Timer to reset invincibility
         if (EtherealTimer > 0) { EtherealTimer--; }
-        else if ((EtherealTimer <= 0) && (Ethereal)) 
-        { 
+        else if ((EtherealTimer <= 0) && (Ethereal))
+        {
             Ethereal = false;
             player.GetComponent<SpriteRenderer>().material = baseMat;
         }
@@ -184,5 +184,11 @@ public class LevelController : MonoBehaviour
         player.GetComponent<PlayerMovement>().rotating = false;
         player.DORotate(Vector3.forward * 360, .5f, RotateMode.FastBeyond360)
             .OnComplete(() => { player.GetComponent<PlayerMovement>().rotating = true; });
+    }
+
+    public void GiveAmmo()
+    {
+        noseAmmo = 3;
+        player.GetComponent<Shoot>().noseAmmo = 3;
     }
 }
