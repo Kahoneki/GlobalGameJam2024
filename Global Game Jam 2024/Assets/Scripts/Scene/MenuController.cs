@@ -31,7 +31,7 @@ public class MenuController : MonoBehaviour
 
     public void Controls()
     {
-        SceneManager.LoadScene("Controls");
+        SceneManager.LoadScene("MultiPlayer");
     }
 
     public void ResumeClicked()
@@ -43,6 +43,11 @@ public class MenuController : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene("Scene02");
+    }
+
+    public void RetryMP()
+    {   
+        SceneManager.LoadScene("MultiPlayer");
     }
 
 
