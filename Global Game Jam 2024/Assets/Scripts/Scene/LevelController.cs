@@ -83,7 +83,8 @@ public class LevelController : MonoBehaviour
         // probs do something with completion percentage
         if (livesLeft <= 0)
         {
-            SceneManager.LoadScene("DeathScene");
+            if(SceneManager.GetActiveScene().name == "Main Scene") { SceneManager.LoadScene("DeathScene"); }
+            else { SceneManager.LoadScene("DeathScene"); }
         }
         //Debugs Avaliable Lives
         //Debug.Log("Lives left: " + livesLeft);
