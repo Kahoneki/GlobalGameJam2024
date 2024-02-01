@@ -65,8 +65,16 @@ public class LevelController : MonoBehaviour
 
         if (levelCompletionPercentage >= 1)
         {
-            if (livesLeft >= 7) { SceneManager.LoadScene("GoodScoreScene"); }
-            else { SceneManager.LoadScene("BadScoreScreen"); }
+            if (livesLeft >= 7) 
+            {
+                if (SceneManager.GetActiveScene().name == "Main Scene") { SceneManager.LoadScene("GoodScoreScene"); }
+                else { SceneManager.LoadScene("GoodScoreSceneMP"); }
+            }
+            else 
+            { 
+                if (SceneManager.GetActiveScene().name == "Main Scene") { SceneManager.LoadScene("BadScoreScene"); }
+                else { SceneManager.LoadScene("BadScoreSceneMP"); }
+            }
         }
 
         //Changes speed over time
