@@ -60,10 +60,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  spawnSpeedModifier: 0.1
+  spawnSpeedModifier: 20
   spawnPosition: 15
   initialSpawnDelay: 3
-  spawnDelayLimit: 1
+  spawnDelayLimit: 0.25
   OnVisualsUpdate:
     m_PersistentCalls:
       m_Calls:

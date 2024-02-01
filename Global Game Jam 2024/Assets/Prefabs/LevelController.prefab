@@ -74,6 +74,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  PowerupPickupSFX: {fileID: 0}
+  ObstacleHitSFX: {fileID: 0}
+  ShootNoseSFX: {fileID: 0}
   baseSpeedMultiplier: 1
   levelTime: 120
   slowTime: 0
