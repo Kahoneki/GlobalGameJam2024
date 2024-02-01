@@ -9,6 +9,10 @@ public class LevelController : MonoBehaviour
     public UnityEvent onHit;
     public UnityEvent onLifeGained;
 
+    [SerializeField] AudioClip PowerupPickupSFX;
+    [SerializeField] AudioClip ObstacleHitSFX;
+    [SerializeField] AudioClip ShootNoseSFX;
+
     [SerializeField] float baseSpeedMultiplier = 1f;
     [SerializeField] float levelTime = 120; // level lasts 120 seconds
     [SerializeField] bool slowTime = false;
@@ -30,11 +34,15 @@ public class LevelController : MonoBehaviour
     public int maxLives = 10;
     public static int livesLeft;
 
+    AudioSource audio;
+
     //setup on creation
     private void Awake()
     {
         speedMultiplier = baseSpeedMultiplier;
         livesLeft = maxLives;
+        audio = GetComponent<AudioSource>();
+
         if (Instance != null && Instance != this)
             Destroy(gameObject);
         else
@@ -154,6 +162,8 @@ public class LevelController : MonoBehaviour
     //Function to lose a health value
     public void Hit()
     {
+        audio.clip = ObstacleHitSFX;
+        audio.Play();
         livesLeft -= 1;
     }
 
@@ -175,6 +185,7 @@ public class LevelController : MonoBehaviour
     public void Splat()
     {
         Instantiate(splatObj);
+        onHit.Invoke();
     }
 
     public void Spin()
@@ -182,6 +193,7 @@ public class LevelController : MonoBehaviour
         player.GetComponent<PlayerMovement>().rotating = false;
         player.DORotate(Vector3.forward * 360, .5f, RotateMode.FastBeyond360)
             .OnComplete(() => { player.GetComponent<PlayerMovement>().rotating = true; });
+        onHit.Invoke();
     }
 
     public void GiveAmmo()
