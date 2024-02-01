@@ -9,7 +9,7 @@ public class SpawningBase : MonoBehaviour
 
     [SerializeField] float spawnSpeedModifier = 0.1f;
     [SerializeField] float spawnPosition = 18f;
-    [SerializeField] float initialSpawnDelay = 1000;
+    [SerializeField] float initialSpawnDelay = 10;
     [SerializeField] float spawnDelayLimit = 1;
     protected float spawnTimer;
     float spawnDelay;

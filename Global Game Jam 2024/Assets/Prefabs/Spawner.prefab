@@ -49,8 +49,8 @@ MonoBehaviour:
       m_Calls: []
   spawnSpeedModifier: 1
   spawnPosition: 18
-  initialSpawnDelay: 4
-  spawnDelayLimit: 0.2
+  initialSpawnDelay: 2.5
+  spawnDelayLimit: 1
   obstacles:
   - {fileID: 2564617165296702844, guid: 511f8fb2a2bd3194e9722b90d5568bbb, type: 3}
   - {fileID: 6409160128096467868, guid: 7cf96437f95c19e4d9ed6941f51508de, type: 3}
@@ -77,4 +77,4 @@ MonoBehaviour:
   - 50
   - 25
   - 15
-  powerUpToObstacleChance: 8
+  powerUpToObstacleChance: 15

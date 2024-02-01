@@ -365,10 +365,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8475085904256673318, guid: 88203c5f5d2e00b439b5d366aba2c164, type: 3}
-      propertyPath: slowTimeTimer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8475085904256673318, guid: 88203c5f5d2e00b439b5d366aba2c164, type: 3}
       propertyPath: speedMultiplier
       value: 1
       objectReference: {fileID: 0}
