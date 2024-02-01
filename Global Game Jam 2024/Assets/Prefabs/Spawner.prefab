@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7235ccf9954f93d4190e995c5ce50bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTimerChange:
+    m_PersistentCalls:
+      m_Calls: []
   spawnSpeedModifier: 0.1
   spawnPosition: 18
   initialSpawnDelay: 4
@@ -54,13 +57,15 @@ MonoBehaviour:
   - {fileID: 5545231150052741515, guid: 409625bc93e37854ba245f2bf588f216, type: 3}
   - {fileID: 2979122404374480524, guid: de8c904955c59364aa8f22328f06a7a8, type: 3}
   - {fileID: 4749925417921453722, guid: 10976a42af6b2664d82ef2a4a8145452, type: 3}
+  - {fileID: 4749925417921453722, guid: d9d2ec329afdd47438e313fc8d9b9cfc, type: 3}
   - {fileID: 803515633165341893, guid: fc591b52390ad464289a7522244f7479, type: 3}
   obstacleSpawnChances:
   - 1
   - 20
-  - 25
+  - 15
   - 4
   - 20
+  - 10
   - 30
   powerups:
   - {fileID: 7818157854533787002, guid: e4c20544e5df0644db11a5cc37fde7cc, type: 3}
@@ -72,3 +77,4 @@ MonoBehaviour:
   - 50
   - 25
   - 15
+  powerUpToObstacleChance: 0

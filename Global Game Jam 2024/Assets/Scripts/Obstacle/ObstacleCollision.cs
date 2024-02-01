@@ -7,7 +7,6 @@ using UnityEngine.Events;
 
 public class ObstacleCollision : MonoBehaviour
 {
-    public UnityEvent OnHit;
     [SerializeField] snotController snozz;
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -49,14 +48,14 @@ public class ObstacleCollision : MonoBehaviour
         {
             switch (col.name)
             {
-                case "EtherealPowerUp":
+                case "EtherealPowerUp(Clone)":
                     LevelController.Instance.MakeEthereal();
 
                     break;
-                case "HealthPowerUp":
+                case "HealthPowerUp(Clone)":
                     LevelController.Instance.onLifeGained.Invoke();
                     break;
-                case "ShootPowerUp":
+                case "ShootPowerUp(Clone)":
                     LevelController.Instance.GiveAmmo();
                     if (snozz != null) { snozz.adjustSnot(); }
                     break;
