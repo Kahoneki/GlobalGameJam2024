@@ -139,7 +139,6 @@ public class LevelController : MonoBehaviour
     //Function to slowTime
     public void SlowTime()
     {
-        player.GetComponent<SpriteRenderer>().material = slimeMat;
         speedMultiplier = baseSpeedMultiplier * slowTimeMultiplier;
         slowTime = true;
         slowTimeTimer = slowTimeTime;
