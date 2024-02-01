@@ -1007,6 +1007,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBase
       objectReference: {fileID: 0}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: levelCompletionPercentage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: onLifeGained.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: onLifeGained.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: onLifeGained.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2144452207}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: onLifeGained.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: onLifeGained.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncrementLives
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: onLifeGained.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: onLifeGained.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8730163398774198736, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1069,31 +1101,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'powerupSpawnChances.Array.data[0]'
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'powerupSpawnChances.Array.data[1]'
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'powerupSpawnChances.Array.data[2]'
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'powerupSpawnChances.Array.data[3]'
-      value: 15
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacleSpawnChances.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacleSpawnChances.Array.data[1]'
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'obstacleSpawnChances.Array.data[2]'
-      value: 15
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacleSpawnChances.Array.data[3]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: 'obstacleSpawnChances.Array.data[4]'
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'obstacleSpawnChances.Array.data[5]'
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'obstacleSpawnChances.Array.data[6]'
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

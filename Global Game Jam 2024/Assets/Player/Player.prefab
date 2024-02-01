@@ -182,7 +182,7 @@ MonoBehaviour:
   SplatSpeedModifier: 0.5
   pinResetDelayTime: 8
   splatResetDelayTime: 8
-  WindParticles: {fileID: 5626327710777155786}
+  WindParticles: {fileID: 0}
   rotating: 1
 --- !u!114 &2411604056684377760
 MonoBehaviour:
@@ -196,6 +196,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851d2a1ec44cec644a4a86d418832c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9137713490576948136}
+        m_TargetAssemblyTypeName: SpawnClown, Assembly-CSharp
+        m_MethodName: spawnClown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9137713490576948136
 MonoBehaviour:
   m_ObjectHideFlags: 0
