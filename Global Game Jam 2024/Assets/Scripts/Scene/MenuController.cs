@@ -31,7 +31,7 @@ public class MenuController : MonoBehaviour
 
     public void Controls()
     {
-        SceneManager.LoadScene("Controls");
+        SceneManager.LoadScene("MultiPlayer");
     }
 
     public void ResumeClicked()
