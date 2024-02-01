@@ -180,6 +180,7 @@ MonoBehaviour:
   SplatSpeedModifier: 0.5
   pinResetDelayTime: 8
   splatResetDelayTime: 8
+  WindParticles: {fileID: 0}
   rotating: 1
 --- !u!114 &2411604056684377760
 MonoBehaviour:
@@ -193,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851d2a1ec44cec644a4a86d418832c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  etherealSound: {fileID: 8300000, guid: 3b19dab3de1efa74782915cdcb507840, type: 3}
   OnHit:
     m_PersistentCalls:
       m_Calls:

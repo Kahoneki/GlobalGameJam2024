@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ObstacleCollision : MonoBehaviour
 {
     public UnityEvent OnHit;
+    [SerializeField] snotController snozz;
     void OnTriggerEnter2D(Collider2D col)
     {
         if (LevelController.Instance.Ethereal) return;
@@ -56,6 +58,7 @@ public class ObstacleCollision : MonoBehaviour
                     break;
                 case "ShootPowerUp":
                     LevelController.Instance.GiveAmmo();
+                    if (snozz != null) { snozz.adjustSnot(); }
                     break;
                 default:
                     LevelController.Instance.SlowTime();

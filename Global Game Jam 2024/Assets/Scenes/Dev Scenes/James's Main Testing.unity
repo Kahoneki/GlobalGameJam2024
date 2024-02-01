@@ -838,7 +838,7 @@ PrefabInstance:
       objectReference: {fileID: 803515633165341893, guid: fc591b52390ad464289a7522244f7479, type: 3}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: powerUpToObstacleChance
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: obstacleSpawnChances.Array.size
@@ -846,19 +846,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'powerupSpawnChances.Array.data[0]'
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'powerupSpawnChances.Array.data[1]'
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'powerupSpawnChances.Array.data[2]'
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'powerupSpawnChances.Array.data[3]'
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: 'obstacleSpawnChances.Array.data[2]'

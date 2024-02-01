@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] int delayTime = 500;
     [SerializeField] GameObject clownNose;
+    [SerializeField] snotController snozz;
     private int shotDelay = 0;
     public int noseAmmo = 0;
 
@@ -20,7 +21,8 @@ public class Shoot : MonoBehaviour
             newNose.transform.position = Position;
             noseAmmo--;
             LevelController.Instance.noseAmmo--;
-            shotDelay = delayTime; 
+            shotDelay = delayTime;
+            if (snozz != null) { snozz.adjustSnot(); }
         }
     }
 }

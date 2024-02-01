@@ -9,10 +9,6 @@ public class HealthController : MonoBehaviour
     // Start is called before the first frame update
     public LevelController levelController;
     [SerializeField] TextMeshProUGUI _textMeshPro;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

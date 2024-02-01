@@ -62,8 +62,9 @@ MonoBehaviour:
   onLifeGained:
     m_PersistentCalls:
       m_Calls: []
+  baseSpeedMultiplier: 1
   speedMultiplier: 1
-  levelCompletionPercentage: 0
+  levelCompletionPercentage: 0.9
   levelTime: 120
   roadSize: 2
   Ethereal: 0
@@ -74,8 +75,7 @@ MonoBehaviour:
   slowTimeTime: 0
   noseAmmo: 0
   stopDelayTime: 1000
-  speedCatchupInterpolation: 0.01
-  changeRate: 0
+  changeRate: 0.015
   splatObj: {fileID: 6290081804193465749, guid: 25b536b49cd8cf843963dbc09d12cfe6, type: 3}
   player: {fileID: 0}
   slowTimeMultiplier: 0.5
