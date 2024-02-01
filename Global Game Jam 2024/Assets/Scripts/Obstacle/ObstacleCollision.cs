@@ -55,7 +55,7 @@ public class ObstacleCollision : MonoBehaviour
                     LevelController.Instance.onLifeGained.Invoke();
                     break;
                 case "ShootPowerUp":
-                    Debug.Log("Shooting not implemented");
+                    LevelController.Instance.GiveAmmo();
                     break;
                 default:
                     LevelController.Instance.SlowTime();
