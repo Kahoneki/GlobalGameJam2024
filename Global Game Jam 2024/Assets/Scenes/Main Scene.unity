@@ -646,7 +646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d775beb3cd8c6548a7b62e4f3300f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelController: {fileID: 2144452207}
   FillSpeed: 0.012
 --- !u!114 &1485133964
 MonoBehaviour:
@@ -1073,8 +1072,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
+      propertyPath: initialSpawnDelay
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: spawnSpeedModifier
-      value: 5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 9169872519013286421, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
       propertyPath: powerUpToObstacleChance
@@ -1222,17 +1225,6 @@ RectTransform:
   m_AnchoredPosition: {x: -656, y: 426}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2144452207 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7787755446439447652, guid: 6c89087f5a8242044b2d439ca70791fb, type: 3}
-  m_PrefabInstance: {fileID: 1904788198}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972767213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3530594f98d8f4fb2deadd8e18c63b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &2144452209
 AudioSource:
   m_ObjectHideFlags: 0
