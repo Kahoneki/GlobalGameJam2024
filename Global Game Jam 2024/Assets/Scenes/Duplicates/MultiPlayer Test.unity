@@ -769,6 +769,107 @@ RectTransform:
   m_AnchoredPosition: {x: 24.646606, y: 7.61145}
   m_SizeDelta: {x: 195.0121, y: 44.933}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1029311417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9128214333211675582, guid: 2cec68857e8b5d845851335d62f6aedf, type: 3}
+  m_PrefabInstance: {fileID: 8634719520605957383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1029311420
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029311417}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1542753145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,10 +1557,25 @@ PrefabInstance:
       propertyPath: 'obstacleSpawnChances.Array.data[6]'
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8941792253841815365, guid: 2cec68857e8b5d845851335d62f6aedf, type: 3}
+      propertyPath: ShootNoseSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f96eb7ceef32d94cbb48800ec324f9c, type: 3}
+    - target: {fileID: 8941792253841815365, guid: 2cec68857e8b5d845851335d62f6aedf, type: 3}
+      propertyPath: ObstacleHitSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: b23a3a66c80da4a4592b6a49cc6aeaea, type: 3}
+    - target: {fileID: 8941792253841815365, guid: 2cec68857e8b5d845851335d62f6aedf, type: 3}
+      propertyPath: PowerupPickupSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 90471e53f554b7248a26c9b6ee8b63de, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9128214333211675582, guid: 2cec68857e8b5d845851335d62f6aedf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1029311420}
   m_SourcePrefab: {fileID: 100100000, guid: 2cec68857e8b5d845851335d62f6aedf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
